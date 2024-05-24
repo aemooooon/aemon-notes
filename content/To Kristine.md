@@ -1,0 +1,7 @@
+爸爸还是趁我印象深刻，给你说说我的一些思路吧：
+1. 如果使用R解决问题，首先要想到2个R的package，第一是`tidyverse` 用来 wrangling，transform数据。再就是`ggplot2`用来作图。
+2. 加载数据之后，无论题目要求是什么，先不管，第一时间查看数据结构。我这里使用了`summary()`和 `glimpse()`函数，通过这2个函数，就可以非常的熟悉并了解你的csv文件里面到底是什么类型，什么结构的数据，仔细观察。你会发现每一个变量的类型，（categorical，continuous），数据结构，character也就是string，double，float，integer等。还能看到每个变量的example，比如日期，数字，统计信息比如中位数，平均值（如果是数字的话），最后就是数据共有多少个column，多少个row，也就是所谓的observation。
+3. 通过观察hotels数据，有几点需要注意，首先数据共有515738行，这个数据量级其实是比较大的了，所以首先你就要有意识的去注意性能问题，如何更快速的操作数据，如果不让因为数据太多导致内存不足，让R studio变的很慢，很卡。所以在step 2的2个问题，我都首先通过select只选择了我们需要的变量显示出来。而不是把所有的都显示出来。
+4. 在step3需要注意的就是，count一个变量的单词数量，你如果去gpt搜索，可能会有至少5种不同的方法，由于数据量大，单词数量更多，你这个时候就要去问gpt，给你推荐一种性能更好的方法来实现，为了更加准确的给你答案，你可以把你的数据example截图10行给它分析。
+5. 在step4，你的答案是对的，确实是there is no clear relationship between positive review word count and reviewer score。但是呢？光靠一个散点图，很难说服别人，因为太主观了，证据不够充分。由于问题你问你2个 continuous variable的相关性（correlation）关系如何，对吧。这里爸爸用了一个函数`correlation <- cor(hotels_data$positive_review_wc, hotels_data$reviewer_score)` 来求着2个variable的相关系数，得到结果是 0.21，所以从这个数字就能确定，这2个变量的相关性特别特别的弱，如果你不明白如何通过观察这个系数来看趋势，去搜搜correlation的概念就明白了。不过我相信你是知道的！毕竟你统计比老子学的好。另外，我在plot上面增加了一条线，使用了`geom_smooth`函数，这条线也能说明只有在左上角一点点有一定的相关性。
+6. 至于step5，主要是stopword，这个东西在很多库里面都有，特别是自然语言处理相关的库，比如NLTK等，你可以直接引入相关的R的library，就可以使用，不会用问gpt就行了，当然有时候gpt给的答案也是不对的，这时候需要去官网查看文档，或者自己写程序来试。好了，今天就说这么多。你先消化，回头开个zoom，对着代码详解。
