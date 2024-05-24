@@ -15,7 +15,11 @@ import cron from "node-cron"
 type Action = "Keeping practise" | "Keeping consider" | "Making notes"
 
 class DailyReflection {
-  private dailyActions: Action[] = ["Keeping practise", "Keeping consider", "Making notes"]
+  private dailyActions: Action[] = [
+      "Keeping practise", 
+      "Keeping consider", 
+      "Making notes"
+    ]
   private efforts: number = 0
 
   public reflectOnSelf(actions: Action[]): string[] {
