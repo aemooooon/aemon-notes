@@ -1,5 +1,5 @@
 1. Create an `airflow` folder and then get into it
-2. Create a [Python3 virtual environment](Create%20an%20Python3%20virtual%20environment) in it
+2. Create a [Python3 virtual environment](Python%20virtual%20environment.md) in it
 3. Run the installation command in PyPI way and ensure the Python version is the same. For example, `pip install 'apache-airflow==2.9.1' --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.9.1/constraints-3.12.txt"`
 4. Set up `export AIRFLOW_HOME=/home/ubuntu/airflow`
 5. Initialisation `airflow db init`
