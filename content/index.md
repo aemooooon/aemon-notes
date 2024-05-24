@@ -2,58 +2,56 @@
 title: 吾日三省吾身，吾身何患无成？
 ---
 
-不积跬步，无以至千里；不积小流，无以成江海。
+不积跬步，无以至千里；不积小流，无以成东海。
 
 ```typescript
-import cron from 'node-cron';
+import cron from "node-cron"
 
-type Action = 'Being honest' | 'Being trustworthy' | 'Practicing skills' | 'Making notes';
+type Action = "Keeping practise" | "Keeping consider" | "Making notes"
 
 class DailyReflection {
-    private dailyActions: Action[] = ['Being honest', 'Being trustworthy', 'Practicing skills', 'Making notes'];
-    private efforts: number = 0;
+  private dailyActions: Action[] = ["Keeping practise", "Keeping consider", "Making notes"]
+  private efforts: number = 0
 
-    public reflectOnSelf(actions: Action[]): string[] {
-        return actions.map(action => `Reflecting on: ${action}`);
+  public reflectOnSelf(actions: Action[]): string[] {
+    return actions.map((action) => `Reflecting on: ${action}`)
+  }
+
+  public makeNotes(reflections: string[]): string[] {
+    return reflections.map((reflection) => `Note: ${reflection}`)
+  }
+
+  public accumulateEfforts(steps: number): void {
+    for (let step = 1; step <= steps; step++) {
+      this.efforts += step
     }
+  }
 
-    public makeNotes(reflections: string[]): string[] {
-        return reflections.map(reflection => `Note: ${reflection}`);
-    }
+  public executeDailyRoutine(): void {
+    const reflections = this.reflectOnSelf(this.dailyActions)
+    const notes = this.makeNotes(reflections)
 
-    public accumulateEfforts(steps: number): void {
-        for (let step = 1; step <= steps; step++) {
-            this.efforts += step;
-        }
-    }
+    console.log("Daily Reflections:")
+    reflections.forEach((reflection) => console.log(reflection))
 
-    public executeDailyRoutine(): void {
-        const reflections = this.reflectOnSelf(this.dailyActions);
-        const notes = this.makeNotes(reflections);
+    console.log("\nNotes:")
+    notes.forEach((note) => console.log(note))
 
-        console.log("Daily Reflections:");
-        reflections.forEach(reflection => console.log(reflection));
+    this.accumulateEfforts(1000)
+    console.log("\nTotal Efforts Accumulated:")
+    console.log(this.efforts)
 
-        console.log("\nNotes:");
-        notes.forEach(note => console.log(note));
-
-        this.accumulateEfforts(1000);
-        console.log("\nTotal Efforts Accumulated:");
-        console.log(this.efforts);
-
-        console.log("\nWisdom:");
-        console.log("吾日三省吾身，吾身何患无成？");
-        console.log("不积跬步，无以至千里；不积小流，无以成江海。");
-        console.log("End of Daily Reflections.")
-    }
+    console.log("\nWisdom:")
+    console.log("吾日三省吾身，吾身何患无成？")
+    console.log("不积跬步，无以至千里；不积小流，无以成东海。")
+    console.log("End of Daily Reflections.")
+  }
 }
 
-const dailyReflection = new DailyReflection();
+const dailyReflection = new DailyReflection()
 
-cron.schedule('0 0 * * *', () => {
-    dailyReflection.executeDailyRoutine();
-    console.log('Daily routine executed at:', new Date().toLocaleString());
-});
-
-console.log('Cron job scheduled to run daily at midnight.');
+cron.schedule("0 0 * * *", () => {
+  dailyReflection.executeDailyRoutine()
+  console.log("Daily routine executed at:", new Date().toLocaleString())
+})
 ```
