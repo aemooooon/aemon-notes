@@ -10,8 +10,8 @@ title: 吾日三省吾身，吾身何患无成？
  * 吾日三省吾身，吾身何患无成？
  * 不积跬步，无以至千里；不积小流，无以成江海。
  */
-import cron from "node-cron"
 
+import cron from "node-cron"
 type Action = "Keeping practise" | "Keeping consider" | "Making notes"
 
 class DailyReflection {
