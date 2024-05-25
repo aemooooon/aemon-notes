@@ -12,12 +12,12 @@ title: 吾日三省吾身，吾身何患无成？
  */
 
 import cron from "node-cron"
-type Action = "Keeping practise" | "Keeping consider" | "Making notes"
+type Action = "Keep practising" | "Keep considering" | "Making notes"
 
 class DailyReflection {
   private dailyActions: Action[] = [
-      "Keeping practise", 
-      "Keeping consider", 
+      "Keep practising", 
+      "Keep considering", 
       "Making notes"
     ]
   private efforts: number = 0
