@@ -1,10 +1,8 @@
 ---
 tags:
   - English
+  - Data416
 ---
-# {{AI-Powered RAs}}
-
-
 
 Hello everyone, my name is Hua. I am really happy to have you guys here. Today, I'm going to talk about artificial intelligence-powered recommendation systems, also known as RAs. I will divide my presentation into five parts. This is my overview of what we'll be covering in that session:
 
