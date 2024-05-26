@@ -3,9 +3,9 @@ tags:
   - English
   - Data416
 ---
-Hello everyone, my name is Hua. I am really happy to have you guys here. Today, I'm going to talk about artificial intelligence-powered recommendation systems, also known as RAs. I will divide my presentation into five parts. This is my overview of what we'll be covering today:
+Hello everyone, 大家好, Tēnā koutou katoa, my name is Hua. I am really happy to have you guys here. Today, I'm going to talk about artificial intelligence-powered recommendation systems, also known as RAs. I will divide my presentation into five parts. This is my overview of what we'll be covering today:
 
-- Introduction of RAs
+- I am gonna to briefly explain what it is RAs and its history.
 - Advantages
 - Challenges and Concerns
 - Things the Stakeholders could do for RAs
@@ -13,7 +13,7 @@ Hello everyone, my name is Hua. I am really happy to have you guys here. Today, 
 
 Now, Let's get started.
 
-The definition of RAs is a combination of algorithms used by internet platforms to identify and recommend content, products, and services. Typically, it works by starting with collecting big data, extracting relevant features, and filtering them. Then, it performs model inference to get the results delivered to the end user. 
+The definition of RAs is a combination of algorithms used by internet platforms to identify and recommend content, products, and services. 
 
 The RAs have developed for 30 years can be separated into four stages:
 
@@ -25,17 +25,17 @@ In 2015, Google introduced wide and deep learning models. In 2016, YouTube start
 
 After 2020, RAs are getting into a prosperous situation where a hundred flowers bloom and a hundred schools of thought. OpenAI's GPT-4 is one of the most prominent benchmarks, especially GPT-4o.
 
-OK, now let me describe the advantages of RAs:
+OK, now let's move on to the advantages of RAs:
 
-In terms of End User Experience, it basically includes Customisation, Personalisation and User Engagement. Users can tailor their preferences, and RAs can provide unique content to each individual user. This makes users feel valued and understood, increasing their satisfaction. They are more likely to spend more time on the platform, exploring and interacting with the content. This ongoing engagement is important for user retention and loyalty.
+In terms of End User Experience, it basically includes Customisation, Personalisation and User Engagement. Users can tailor their preferences, and RAs can provide unique content to each individual user. This makes users feel valued and understood, increasing their satisfaction. They are more likely to spend more time on the platform, exploring and interacting with the content. This ongoing engagement is important for user retention and loyalty. 
 
-Regardless of platform revenue, it incorporates cross-selling, upselling, targeted marketing and conversion rates. For example, Netflix's recommendation system accounts for about 80% of the content watched on the platform. It indicates how important these systems are in driving user engagement and, consequently, revenue.
+Regarding platform revenue, it incorporates cross-selling, upselling, targeted marketing, and conversion rates. Everyone knows that in an internet company, as long as you have user traffic, you can make a lot of money. Netflix's recommendation system accounts for about 80% of the content watched on the platform. It indicates how significant these systems are in driving user engagement and, consequently, revenue.
 
-However, there are still some challenges and concerns. Firstly, Let's start with the "Rabbit Hole" effect. This term describes how RAs can lead users down a path of increasingly narrow content. For example, YouTube's algorithm often suggests videos that become progressively more specific. Like me, I was wondering about learning some DevOps techniques. I started with a Docker container. Then, I found a Kubernetes tutorial and decided to learn Kubernetes. As I kept learning, more related tutorials such as Terraform and Ansible kept popping up, and again and again, the endless suggested videos never stopped catching my attention.
+However, there are still some challenges and concerns about RAs. First of all, Let's start with the "Rabbit Hole" effect. This term describes how RAs can lead users down a path of increasingly narrow content. For example, YouTube's algorithm often suggests videos that become progressively more specific. Like me, I was wondering about learning some DevOps techniques. I started with a Docker container. Then, I found a Kubernetes tutorial and decided to learn Kubernetes. As I kept learning, more related tutorials such as Terraform and Ansible kept popping up, and again and again, the endless suggested videos never stopped catching my attention. So this is a problem; It's not that I don't want to learn something new just because data science students are always really busy, right?
 
 Next, we have the "Echo Chamber." This happens when RAs continuously suggest content that aligns with a user's existing beliefs, reinforcing their opinions without exposure to differing perspectives. This can be particularly tough on social media platforms where users only see posts that match their ideologies. This kind of scenario is extremely dangerous for extremists.
 
-Lastly, the "Filter Bubble." This concept is about users getting stuck seeing the same kind of information over and over. The algorithm only displays things they wanted before. This means they don't always catch new or different ideas that could change their consideration.
+Lastly, the "Filter Bubble." This concept is about users getting stuck seeing the same kind of information over and over. The algorithm only displays things they wanted before. This means they don't often get different opinions that could change their consideration.
 
 Other issues such as data privacy, security, algorithm fairness, and transparency. I am not talking about these issues today because I found so many classmates have already spoken about them. The reality is that regulations always lag behind algorithm development and implementation.
 
