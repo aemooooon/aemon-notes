@@ -27,7 +27,7 @@ After 2020, RAs are getting into a prosperous situation where a hundred flowers 
 
 OK, now let's move on to the advantages of RAs:
 
-In terms of End User Experience, it basically includes Customisation, Personalisation and User Engagement. Users can tailor their preferences, and RAs can provide unique content to each individual user. This makes users feel valued and understood, increasing their satisfaction. They are more likely to spend more time on the platform, exploring and interacting with the content. This ongoing engagement is important for user retention and loyalty. 
+In terms of End User Experience, it basically includes Customisation, Personalisation and User Engagement. Users can tailor their preferences, and RAs can provide unique content to each individual user. This makes users feel valued and understood, increasing their satisfaction. They are more likely to spend more time on the platform, exploring and interacting with the content. This ongoing engagement is very important for user retention and loyalty. 
 
 Regarding platform revenue, it incorporates cross-selling, upselling, targeted marketing, and conversion rates. Everyone knows that in an internet company, as long as you have user traffic, you can make a lot of money. Netflix's recommendation system accounts for about 80% of the content watched on the platform. It indicates how significant these systems are in driving user engagement and, consequently, revenue.
 
@@ -45,4 +45,4 @@ First, platforms should add diversity metrics and user control to their algorith
 
 Secondly, individuals can improve their digital literacy, which means learning how to navigate online content and understand AI systems. Countries like Finland have media literacy programs in schools to help people become more critical of online information. Moreover, using privacy-focused tools such as the DuckDuckGo browser can also help address this kind of problem.
 
-Finally, students, especially data science students, have a significant responsibility as future developers. We should aim to create fair and unbiased algorithms, develop transparent and trustworthy models, and provide high-quality, reliable data for better recommendations. Suppose we keep focusing on these kinds of areas so that we will have a better digital environment in future.
+Finally, students, especially data science students, have a significant responsibility as future stakeholders. We should aim to create fair and unbiased algorithms, develop transparent and trustworthy models, and provide high-quality, reliable data for better recommendations. Suppose we keep focusing on these kinds of areas so that we will have a better digital environment in future.
