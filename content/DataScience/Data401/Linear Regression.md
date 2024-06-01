@@ -4,8 +4,6 @@ draft: false
 tags:
   - regression
 ---
-# Linear Regression
-
 线性回归是一种基本的回归分析方法，用于描述两个变量之间的线性关系。简单线性回归模型的形式为：
 
 $$ y = \beta_0 + \beta_1 x $$
@@ -109,3 +107,4 @@ beta_1 = numerator / denominator
 
 print(f'Slope (beta_1): {beta_1}')
 ```
+
