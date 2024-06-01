@@ -1,5 +1,5 @@
 ---
-title: Linear Regression
+title: 
 draft: false
 tags:
   - regression
@@ -79,9 +79,11 @@ $$
    $$
 
 5. 计算斜率：
+   
    $$
    \beta_1 = \frac{9}{10} = 0.9
    $$
+   
 
 因此，斜率 $\beta_1$ 为 0.9。
 
