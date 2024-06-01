@@ -3,8 +3,6 @@ title:
 draft: false
 tags:
 ---
-# Correlation 详解
-
 相关性（Correlation）是统计学中用来衡量两个变量之间关系的一种指标。它描述了两个变量在多大程度上以及以何种方式共同变化。相关性可以帮助我们理解变量之间的依赖性和预测关系。
 
 ## 相关系数
@@ -51,6 +49,17 @@ $$
 $$
 
 其中 $C$ 是一致对，$D$ 是不一致对，$T$ 和 $U$ 是重复值的对数。
+
+## 相关系数矩阵
+
+假设我们有两个变量 $x$ 和 $y$，使用 `np.corrcoef(x, y)` 计算相关系数矩阵，得到： 
+$$ 
+\begin{bmatrix} 1 & r \\ r & 1 \\ \end{bmatrix} 
+$$ 其中： 
+- 第一个元素 $(0, 0)$ 是 $x$ 与 $x$ 的相关系数，自相关性为 1。 
+- 第二个元素 $(0, 1)$ 是 $x$ 与 $y$ 的相关系数，即我们通常关心的相关系数 $r$。 
+- 第三个元素 $(1, 0)$ 是 $y$ 与 $x$ 的相关系数，与 $(0, 1)$ 相同，即 $r$。 
+- 第四个元素 $(1, 1)$ 是 $y$ 与 $y$ 的相关系数，自相关性为 1。
 
 ## 计算步骤
 
@@ -115,7 +124,7 @@ $$
 ## Python 代码示例
 
 ```python
-import numpy as np
+[import numpy as np
 
 # 数据点
 x = np.array([1, 2, 3, 4, 5])
@@ -124,6 +133,25 @@ y = np.array([2, 3, 5, 4, 6])
 # 计算皮尔逊相关系数
 correlation = np.corrcoef(x, y)[0, 1]
 
-print(f'Pearson correlation coefficient: {correlation}')
+print(f'Pearson correlation coefficient: {correlation}')](<import numpy as np
+
+# 数据点
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 3, 5, 4, 6])
+
+# 计算相关系数矩阵
+# np.corrcoef 返回一个相关系数矩阵，其中 [0, 0] 和 [1, 1] 是自相关系数，值为 1
+# [0, 1] 和 [1, 0] 是 x 和 y 之间的相关系数
+corr_matrix = np.corrcoef(x, y)
+
+# 打印相关系数矩阵以便查看
+print("Correlation matrix:")
+print(corr_matrix)
+
+# 提取 x 和 y 之间的相关系数
+# 相关系数矩阵的 [0, 1] 位置上的值是 x 和 y 之间的皮尔逊相关系数
+correlation = corr_matrix[0, 1]
+
+print(f'Pearson correlation coefficient: {correlation}')>)
 ```
 
