@@ -1,3 +1,10 @@
+---
+title: 
+draft: false
+tags:
+  - git
+---
+
 ```bash
 # view logs/records and 临时暂存工作搞点别的再回来
 gloga

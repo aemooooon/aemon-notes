@@ -1,3 +1,10 @@
+---
+title: 
+draft: false
+tags:
+  - env
+---
+
 https://docs.python.org/3/tutorial/venv.html
 
 ```python

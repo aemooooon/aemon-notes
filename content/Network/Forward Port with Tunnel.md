@@ -1,3 +1,9 @@
+---
+title: 
+draft: false
+tags:
+---
+
 ## 命令行
 
 `brew install autossh`

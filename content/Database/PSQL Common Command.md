@@ -1,3 +1,10 @@
+---
+title: 
+draft: false
+tags:
+  - postgresql
+---
+
 `psql -h hostname -U user -p port`
 
 `\c database_name`

@@ -1,3 +1,10 @@
+---
+title: 
+draft: false
+tags:
+  - service
+---
+
 
 `sudo vim /etc/systemd/system/individual-example.service`
 

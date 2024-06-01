@@ -1,3 +1,9 @@
+---
+title: 
+draft: false
+tags:
+---
+
 ## Generate Keys
 ```bash
 sudo apt update  

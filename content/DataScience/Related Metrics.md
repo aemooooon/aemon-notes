@@ -2,7 +2,9 @@
 title: 
 draft: false
 tags:
-  - regression
+  - stats
+  - correlation
+  - residual
 ---
 相关性（Correlation）是统计学中用来衡量两个变量之间关系的一种指标。它描述了两个变量在多大程度上以及以何种方式共同变化。相关性可以帮助我们理解变量之间的依赖性和预测关系。
 
