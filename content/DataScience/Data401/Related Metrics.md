@@ -2,6 +2,7 @@
 title: 
 draft: false
 tags:
+  - regression
 ---
 相关性（Correlation）是统计学中用来衡量两个变量之间关系的一种指标。它描述了两个变量在多大程度上以及以何种方式共同变化。相关性可以帮助我们理解变量之间的依赖性和预测关系。
 
@@ -151,5 +152,122 @@ print(corr_matrix)
 correlation = corr_matrix[0, 1]
 
 print(f'Pearson correlation coefficient: {correlation}')>)
+```
+
+
+## 残差（Residual）
+
+残差是实际值与预测值之间的差异，表示模型预测误差。对于每一个数据点 $i$：
+
+$$ \text{残差}_i = y_i - \hat{y}_i $$
+
+其中：
+- $y_i$ 是第 $i$ 个数据点的实际值。
+- $\hat{y}_i$ 是第 $i$ 个数据点的预测值。
+
+## 均方误差（Mean Squared Error, MSE）
+
+均方误差是残差的平方的平均值，用于衡量模型的预测精度。它更重视大误差，因为误差被平方了。
+
+$$ \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2 $$
+
+其中：
+- $n$ 是数据点的数量。
+- $y_i$ 是第 $i$ 个数据点的实际值。
+- $\hat{y}_i$ 是第 $i$ 个数据点的预测值。
+
+## 平均绝对误差（Mean Absolute Error, MAE）
+
+平均绝对误差是残差绝对值的平均值，用于衡量模型的平均预测误差。它对大误差的敏感度较低，因为误差没有被平方。
+
+$$ \text{MAE} = \frac{1}{n} \sum_{i=1}^n |y_i - \hat{y}_i| $$
+
+其中：
+- $n$ 是数据点的数量。
+- $y_i$ 是第 $i$ 个数据点的实际值。
+- $\hat{y}_i$ 是第 $i$ 个数据点的预测值。
+
+## 均方根误差（Root Mean Squared Error, RMSE）
+
+均方根误差是均方误差（MSE）的平方根，用于衡量预测值与实际值之间的差异。RMSE 和 MSE 一样，对大误差比较敏感，因为误差被平方了。RMSE 的单位和原始数据的单位相同，使得其更容易解释。
+
+$$ \text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2} $$
+
+其中：
+- $n$ 是数据点的数量。
+- $y_i$ 是第 $i$ 个数据点的实际值。
+- $\hat{y}_i$ 是第 $i$ 个数据点的预测值。
+
+## 示例
+
+假设有以下数据点的实际值和预测值：
+
+| 实际值 $y$ | 预测值 $\hat{y}$ |
+|------------|------------------|
+| 3          | 2.5              |
+| -0.5       | 0.0              |
+| 2          | 2.1              |
+| 7          | 8.1              |
+
+我们可以计算残差、MSE、MAE 和 RMSE：
+
+1. **残差**：
+   $$
+   \text{残差}_1 = 3 - 2.5 = 0.5
+   $$
+   $$
+   \text{残差}_2 = -0.5 - 0.0 = -0.5
+   $$
+   $$
+   \text{残差}_3 = 2 - 2.1 = -0.1
+   $$
+   $$
+   \text{残差}_4 = 7 - 8.1 = -1.1
+   $$
+
+2. **MSE**：
+   $$
+   \text{MSE} = \frac{1}{4} \left( (0.5)^2 + (-0.5)^2 + (-0.1)^2 + (-1.1)^2 \right) = \frac{1}{4} (0.25 + 0.25 + 0.01 + 1.21) = \frac{1.72}{4} = 0.43
+   $$
+
+3. **MAE**：
+   $$
+   \text{MAE} = \frac{1}{4} \left( |0.5| + |-0.5| + |-0.1| + |-1.1| \right) = \frac{1}{4} (0.5 + 0.5 + 0.1 + 1.1) = \frac{2.2}{4} = 0.55
+   $$
+
+4. **RMSE**：
+   $$
+   \text{RMSE} = \sqrt{\text{MSE}} = \sqrt{0.43} \approx 0.656
+   $$
+
+## Python 代码示例
+
+```python
+import numpy as np
+
+# 实际值和预测值
+y = np.array([3, -0.5, 2, 7])
+y_pred = np.array([2.5, 0.0, 2.1, 8.1])
+
+# 计算残差
+residuals = y - y_pred
+print("Residuals:", residuals)
+
+# 计算MSE
+mse = np.mean((y - y_pred) ** 2)
+print("Mean Squared Error (MSE):", mse)
+
+# 计算MAE
+mae = np.mean(np.abs(y - y_pred))
+print("Mean Absolute Error (MAE):", mae)
+
+# 计算RMSE
+rmse = np.sqrt(mse)
+print("Root Mean Squared Error (RMSE):", rmse)
+
+# Residuals: [ 0.5 -0.5 -0.1 -1.1]
+# Mean Squared Error (MSE): 0.43
+# Mean Absolute Error (MAE): 0.55
+# Root Mean Squared Error (RMSE): 0.6557438524302003
 ```
 
