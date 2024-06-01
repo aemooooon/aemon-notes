@@ -53,9 +53,7 @@ $$
 ## 相关系数矩阵
 
 假设我们有两个变量 $x$ 和 $y$，使用 `np.corrcoef(x, y)` 计算相关系数矩阵，得到： 
-$$ 
-\begin{bmatrix} 1 & r \\ r & 1 \\ \end{bmatrix} 
-$$ 其中： 
+$$ \begin{bmatrix} 1 & r \\ r & 1 \\ \end{bmatrix} $$ 其中： 
 - 第一个元素 $(0, 0)$ 是 $x$ 与 $x$ 的相关系数，自相关性为 1。 
 - 第二个元素 $(0, 1)$ 是 $x$ 与 $y$ 的相关系数，即我们通常关心的相关系数 $r$。 
 - 第三个元素 $(1, 0)$ 是 $y$ 与 $x$ 的相关系数，与 $(0, 1)$ 相同，即 $r$。 
@@ -124,7 +122,7 @@ $$ 其中：
 ## Python 代码示例
 
 ```python
-[import numpy as np
+import numpy as np
 
 # 数据点
 x = np.array([1, 2, 3, 4, 5])
