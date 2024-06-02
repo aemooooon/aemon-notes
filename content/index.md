@@ -64,4 +64,3 @@ cron.schedule("0 0 * * *", () => {
   console.log("Daily routine executed at:", new Date().toLocaleString())
 })
 ```
-![Aemon Wang](./Presentations/huawang.jpg)
