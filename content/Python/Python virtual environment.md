@@ -6,7 +6,7 @@ tags:
   - python
 ---
 
-> [!important]
+> [!aspiration]
 > 最近发现很多Data Science的同学，学了半年480，还不知道如何正确的管理自己的Python Project，运行环境和版本控制工具。所以弄一个note放在这里！
 
 # Python Project Setup
@@ -49,12 +49,13 @@ tags:
 
 6. **Generate `requirements.txt`**
     ```bash
-    python -m pip freeze > requirements.txt
+    # 把当前所用到的库都存到这个文件，方便新环境快速安装
+    python -m pip freeze > requirements.txt 
     ```
 
 For more information can check: https://docs.python.org/3/tutorial/venv.html
 
-## Part 2: Uploading to GitHub
+## Part 2: Adding Version Control
 
 1. **Initialize a Git Repository**
     ```bash
@@ -84,7 +85,7 @@ For more information can check: https://docs.python.org/3/tutorial/venv.html
         git push -u origin master
         ```
 
-## Part 3: Cloning and Running the Project on Another Computer
+## Part 3: Running on New Environment
 
 1. **Clone the Repository**
     ```bash
