@@ -5,12 +5,9 @@ theme: simple
 # My new presentation 1
 
 ---
+
 This is the second slide.
-## Heading 2
-
-### Heading 3
 <!-- slide bg="[[Day.jpg]]"  -->
-
 
 ---
 
