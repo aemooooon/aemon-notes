@@ -43,13 +43,13 @@ print(vectorizer.get_feature_names_out())
  $$
 TF(t, d) = \frac{f(t, d)}{N} 
 $$
-	其中，$f(t,d)$ 表示词 $t$ 在文档 $𝑑$ 中出现的次数，$N$ 是文档中的总词数。
+其中，$f(t,d)$ 表示词 $t$ 在文档 $𝑑$ 中出现的次数，$N$ 是文档中的总词数。
 - **逆文档频率（IDF，Inverse Document Frequency）**：
 	逆文档频率是一个词在整个文档集合中的普遍重要性，公式为
 $$
 IDF(t, D) = \log \left( \frac{N}{1 + df(t, D)} \right)
 $$
-	其中，$N$ 是文档集合中的文档总数，$𝑑𝑓(𝑡,𝐷)$ 是包含词 $t$ 的文档数。
+其中，$N$ 是文档集合中的文档总数，$𝑑𝑓(𝑡,𝐷)$ 是包含词 $t$ 的文档数。
 
 将二者结合起来，得到TF-IDF值：
 $$
