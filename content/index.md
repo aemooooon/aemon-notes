@@ -8,7 +8,7 @@ title: 吾日三省吾身，吾身何患无成？
 /**
  * Daily reflection and persistent efforts lead to success.
  * 吾日三省吾身，吾身何患无成？
- * 不积跬步，无以至千里；不积小流，无以成江海。
+ * 不积跬步，无以至千里；不积小流，无以成东海。
  */
 
 import cron from "node-cron"
