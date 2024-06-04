@@ -5,15 +5,15 @@ tags:
   - topicmodel
   - classification
 ---
-### Overview
 
-Text preprocessing is a crucial step in Natural Language Processing (NLP) that aims to prepare raw text data for various analytical tasks such as topic modeling, text classification, and sentiment analysis. This note covers various text preprocessing techniques, including their concepts, applications, advantages, and disadvantages. Additionally, it discusses how to choose and apply these techniques based on different research purposes and themes.
+> [!Overview]
+> Text preprocessing is a crucial step in Natural Language Processing (NLP) that aims to prepare raw text data for various analytical tasks such as topic modeling, text classification, and sentiment analysis. This note covers various text preprocessing techniques, including their concepts, applications, advantages, and disadvantages. Additionally, it discusses how to choose and apply these techniques based on different research purposes and themes.
 
 ---
 
-### Digi405 Function Analysis
+# Digi405 Function Analysis
 
-#### preprocess_data Function
+## preprocess_data Function
 
 The `preprocess_data` function is designed to prepare text data for topic modeling by performing several preprocessing steps:
 
@@ -53,9 +53,9 @@ def preprocess_data(doc_set, extra_stopwords={}):
 
 ---
 
-### Detailed Analysis
+# Detailed Analysis
 
-#### 1. Replace Newlines and Multiple Spaces
+## 1. Replace Newlines and Multiple Spaces
 
 ```python
 doc_set = [re.sub(r'\s+', ' ', doc) for doc in doc_set]
@@ -64,7 +64,7 @@ doc_set = [re.sub(r'\s+', ' ', doc) for doc in doc_set]
 **Purpose**: To clean the text by standardizing spaces and removing unnecessary line breaks.
 **Significance**: Ensures text is uniform, which helps in consistent tokenization and analysis.
 
-#### 2. Initialize Regex Tokenizer
+## 2. Initialize Regex Tokenizer
 
 ```python
 tokenizer = RegexpTokenizer(r'\w+')
@@ -73,7 +73,7 @@ tokenizer = RegexpTokenizer(r'\w+')
 **Purpose**: To create a tokenizer that splits text into words based on word characters.
 **Significance**: Simplifies the tokenization process and ensures only meaningful tokens are extracted.
 
-#### 3. Create and Update Stop Words List
+## 3. Create and Update Stop Words List
 
 ```python
 en_stop = set(stopwords.words('english'))
@@ -84,7 +84,7 @@ if len(extra_stopwords) > 0:
 **Purpose**: To define a set of common words that should be ignored in the analysis.
 **Significance**: Removing stop words reduces noise and focuses on the significant words in the text.
 
-#### 4. Loop Through Documents and Process Each
+## 4. Loop Through Documents and Process Each
 
 ```python
 texts = []
@@ -100,9 +100,9 @@ for i in doc_set:
 
 ---
 
-### Common Text Preprocessing Techniques
+# Common Text Preprocessing Techniques
 
-#### 1. Lowercasing
+## 1. Lowercasing
 
 **Concept**: Convert all characters in the text to lowercase.
 **Applications**: Useful in almost all text processing tasks.
@@ -113,7 +113,7 @@ for i in doc_set:
 text = text.lower()
 ```
 
-#### 2. Tokenization
+## 2. Tokenization
 
 **Concept**: Split text into individual words or tokens.
 **Applications**: Essential for tasks like text classification, topic modeling.
@@ -125,7 +125,7 @@ from nltk.tokenize import word_tokenize
 tokens = word_tokenize(text)
 ```
 
-#### 3. Removing Punctuation
+## 3. Removing Punctuation
 
 **Concept**: Remove punctuation marks from the text.
 **Applications**: Common in sentiment analysis and text classification.
@@ -137,7 +137,7 @@ import string
 text = text.translate(str.maketrans('', '', string.punctuation))
 ```
 
-#### 4. Removing Stop Words
+## 4. Removing Stop Words
 
 **Concept**: Remove common words that do not contribute much meaning.
 **Applications**: Widely used in information retrieval and text mining.
@@ -150,7 +150,7 @@ stop_words = set(stopwords.words('english'))
 filtered_tokens = [word for word in tokens if word not in stop_words]
 ```
 
-#### 5. Stemming
+## 5. Stemming
 
 **Concept**: Reduce words to their base form by stripping suffixes.
 **Applications**: Useful in information retrieval and text mining.
@@ -163,7 +163,7 @@ stemmer = PorterStemmer()
 stems = [stemmer.stem(word) for word in tokens]
 ```
 
-#### 6. Lemmatization
+## 6. Lemmatization
 
 **Concept**: Reduce words to their dictionary form by considering context.
 **Applications**: Useful in text classification and sentiment analysis.
@@ -178,9 +178,9 @@ lemmas = [lemmatizer.lemmatize(word) for word in tokens]
 
 ---
 
-### Advanced Text Preprocessing Techniques
+# Advanced Text Preprocessing Techniques
 
-#### 1. Synonym Replacement
+## 1. Synonym Replacement
 
 **Concept**: Replace words with their synonyms to standardize vocabulary.
 **Applications**: Text augmentation, semantic analysis.
@@ -199,7 +199,7 @@ def synonym_replacement(word):
 replaced_tokens = [synonym_replacement(word) for word in tokens]
 ```
 
-#### 2. Phrase Detection
+## 2. Phrase Detection
 
 **Concept**: Identify and merge common phrases in the text.
 **Applications**: Topic modeling, machine translation.
@@ -217,7 +217,7 @@ bigram = Phraser(phrases)
 bigram_sentence = bigram[sentences[0]]
 ```
 
-#### 3. Abbreviation Expansion
+## 3. Abbreviation Expansion
 
 **Concept**: Expand abbreviations into their full form.
 **Applications**: Medical text analysis, legal document processing.
@@ -231,7 +231,7 @@ expanded_tokens = [abbreviations.get(word, word) for word in tokens]
 
 ---
 
-### Choosing the Right Techniques
+# Choosing the Right Techniques
 
 Choosing the appropriate preprocessing techniques depends on the specific task and goals. Here are some guidelines:
 
@@ -240,22 +240,3 @@ Choosing the appropriate preprocessing techniques depends on the specific task a
 - **Sentiment Analysis**: Tokenization, lowercasing, stop words removal, and synonym replacement.
 - **Information Retrieval**: Tokenization, lowercasing, stop words removal, and stemming.
 - **Named Entity Recognition (NER)**: Tokenization, lowercasing, and lemmatization (without removing stop words).
-
-### Conclusion
-
-Text preprocessing is a foundational step in NLP that greatly impacts the performance and accuracy of downstream tasks. Understanding and applying the appropriate preprocessing techniques based on the specific task can significantly enhance the effectiveness of text analysis and modeling.
-
-### References
-
-- NLTK Documentation: [https://www.nltk.org](https://www.nltk.org)
-- Gensim Documentation: [https://radimrehurek.com/gensim/](https://radimrehurek.com/gensim/)
-- SpaCy Documentation: [https://spacy.io](https://spacy.io)
-
-### Additional Resources
-
-- **Text Normalization Techniques in NLP**: [Medium Article](https://medium.com/@datamonsters/text-normalization-in-nlp-5daac815c6ab)
-- **Word Embeddings for NLP**: [TensorFlow Tutorial](https://www.tensorflow.org/tutorials/text/word_embeddings)
-
----
-
-This note provides a comprehensive understanding of various text preprocessing techniques, their applications, and practical examples to help in the effective preprocessing of text data.

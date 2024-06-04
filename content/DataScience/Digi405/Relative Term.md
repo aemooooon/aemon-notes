@@ -9,7 +9,7 @@ tags:
 # Bag of Words (BoW)
 
 > [!Definition]
-Bag of Words (BoW) is a text representation method that describes the occurrence of words within a document, ignoring grammar and word order but considering multiplicity. BoW is used in natural language processing (NLP) for tasks like text classification, clustering, and information retrieval, where the presence or frequency of words matters more than their order.
+> Bag of Words (BoW) is a text representation method that describes the occurrence of words within a document, ignoring grammar and word order but considering multiplicity. BoW is used in natural language processing (NLP) for tasks like text classification, clustering, and information retrieval, where the presence or frequency of words matters more than their order.
 ## Python Code Example
 
 ```python
