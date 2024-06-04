@@ -5,7 +5,8 @@ tags:
   - regression
   - stats
 ---
-线性回归是一种基本的回归分析方法，用于描述两个变量之间的线性关系。简单线性回归模型的形式为：
+> [!Definition]
+> 线性回归是一种基本的回归分析方法，用于描述两个变量之间的线性关系。简单线性回归模型的形式为：
 
 $$ y = \beta_0 + \beta_1 x $$
 
@@ -27,12 +28,12 @@ $$
 - $\bar{x}$ 是自变量 $x$ 的平均值。
 - $\bar{y}$ 是因变量 $y$ 的平均值。
 
-### 解释
+# 解释
 
 - 分子部分 $\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})$ 是协方差，表示 $x$ 和 $y$ 之间的联合变异程度。
 - 分母部分 $\sum_{i=1}^n (x_i - \bar{x})^2$ 是 \( x \) 的方差，表示 $x$ 的变异程度。
 
-### 计算步骤
+# 计算步骤
 
 1. 计算 $x$ 和 $y$ 的平均值，记为 $\bar{x}$ 和 $\bar{y}$。
 2. 计算每个数据点与平均值的差值 $(x_i - \bar{x})$ 和 $(y_i - \bar{y})$。
@@ -40,7 +41,7 @@ $$
 4. 计算 $x$ 的差值平方和 $\sum_{i=1}^n (x_i - \bar{x})^2$。
 6. 用乘积和除以平方和得到斜率 $\beta_1$。
 
-### 示例
+# 示例
 
 假设有以下数据点：
 - \( (1, 2) \)
@@ -86,7 +87,7 @@ $$
 
 因此，斜率 $\beta_1$ 为 0.9。
 
-### Python 代码示例
+# Python 代码示例
 
 我们也可以用 Python 代码来验证计算过程：
 
@@ -109,3 +110,81 @@ beta_1 = numerator / denominator
 print(f'Slope (beta_1): {beta_1}')
 ```
 
+# Multiple Linear Regression
+
+>[!Definition]
+>Multiple Linear Regression (MLR) is a statistical technique that models the relationship between a dependent variable and two or more independent variables by fitting a linear equation to observed data. The model takes the form:
+
+$$ y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \cdots + \beta_px_p + \epsilon $$
+
+Where:
+- $y$ is the dependent variable,
+- $x_1, x_2, \ldots, x_p$ are the independent variables,
+- $\beta_0$ is the y-intercept,
+- $\beta_1, \beta_2, \ldots, \beta_p$ are the coefficients of the independent variables,
+- $\epsilon$ is the error term.
+
+**Example:**
+Consider predicting the price of a house based on its size (in square feet), number of bedrooms, and age. The multiple linear regression model would be:
+
+$$ \text{Price} = \beta_0 + \beta_1 \cdot \text{Size} + \beta_2 \cdot \text{Bedrooms} + \beta_3 \cdot \text{Age} + \epsilon $$
+
+**Calculation in R:**
+
+```r
+# Sample data
+house_data <- data.frame(
+  Price = c(200000, 250000, 300000, 150000, 180000),
+  Size = c(1500, 2000, 2500, 1200, 1600),
+  Bedrooms = c(3, 4, 4, 2, 3),
+  Age = c(10, 15, 20, 5, 8)
+)
+
+# Multiple Linear Regression Model
+model <- lm(Price ~ Size + Bedrooms + Age, data = house_data)
+summary(model)
+```
+
+# Overfitting
+
+>[!Definition]
+>Overfitting occurs when a statistical model describes random error or noise in the data rather than the underlying relationship. An overfitted model performs well on training data but poorly on new, unseen data.
+
+**Causes of Overfitting:**
+- **Complex Models:** Too many parameters relative to the number of observations.
+- **Noise in Data:** Fitting the noise instead of the actual data pattern.
+
+**Signs of Overfitting:**
+- **High Variance:** Model predictions vary widely for different training data sets.
+- **Poor Generalization:** Good performance on training data but poor performance on validation/test data.
+
+**Example:**
+If we fit a polynomial regression model of a very high degree to a small dataset, it may perfectly fit the training data but fail to predict new data accurately.
+
+**Visualization of Overfitting:**
+1. **Training Data Fit:**
+   - The model fits the training data perfectly, capturing all fluctuations and noise.
+2. **Test Data Performance:**
+   - The model performs poorly on test data, as it fails to generalize from the training data.
+
+**Preventing Overfitting:**
+- **Cross-Validation:** Use techniques like k-fold cross-validation to ensure the model generalizes well to unseen data.
+- **Simpler Models:** Prefer simpler models that capture the underlying trend without fitting the noise.
+- **Regularization:** Techniques like Lasso or Ridge regression add penalties to model complexity.
+
+**Example in R:**
+
+```r
+# Sample data
+set.seed(123)
+x <- 1:10
+y <- x + rnorm(10)
+
+# Overfitting with a high-degree polynomial
+overfit_model <- lm(y ~ poly(x, 10))
+summary(overfit_model)
+
+# Plotting the fit
+plot(x, y, main = "Overfitting Example")
+lines(x, predict(overfit_model, data.frame(x=x)), col = "red")
+```
