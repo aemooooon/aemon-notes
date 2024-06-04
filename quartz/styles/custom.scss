@@ -3,4 +3,10 @@
 // put your custom CSS here!
 .page-title {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Arial', sans-serif;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #f3ec78, #af4261);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
