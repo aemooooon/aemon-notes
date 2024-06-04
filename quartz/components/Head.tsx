@@ -25,8 +25,9 @@ export default (() => {
         {cfg.theme.cdnCaching && cfg.theme.fontOrigin === "googleFonts" && (
           <>
             <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
             <link rel="stylesheet" href={googleFontHref(cfg.theme)} />
+            <link href="https://fonts.googleapis.com/css2?family=Beau+Rivage&family=Dancing+Script:wght@700&display=swap" rel="stylesheet" />
           </>
         )}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
