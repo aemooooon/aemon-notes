@@ -5,10 +5,11 @@ tags:
 ---
 
 ## 命令行
+```bash
+brew install autossh
 
-`brew install autossh`
-
-`autossh -M 0 -i /Users/hua/.ssh/DATA472-jhs348-grpkey.pem -L 5434:data472-jre141-groupcollection-1.cyi9p9kw8doa.ap-southeast-2.rds.amazonaws.com:5432 ubuntu@3.25.53.109`
+autossh -M 0 -i /Users/hua/.ssh/DATA472-jhs348-grpkey.pem -L 5434:data472-jre141-groupcollection-1.cyi9p9kw8doa.ap-southeast-2.rds.amazonaws.com:5432 ubuntu@3.25.53.109
+```
 
 ## 脚本
 

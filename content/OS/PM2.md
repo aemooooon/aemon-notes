@@ -6,7 +6,6 @@ tags:
   - service
 ---
 
-
 ### Installing PM2 Globally
 
 To install PM2 globally, use npm:

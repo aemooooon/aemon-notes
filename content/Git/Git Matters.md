@@ -22,5 +22,16 @@ git commit -m "Your actual commit message"
 
 # 在前一个commit的基础上修改或者保留message，但是hash会变
 git commit --amend
+```
 
+```bash
+git remote prune origin # 刷新本地仓库保持与远程仓库的改动的同步
+
+git push origin --delete [branch_name] # 删除远程分支 
+
+#When you are making a pull request, you will see that there is nothing to compare against. Thanks to Jamie, here is a command that will fix that:
+
+git merge main --allow-unrelated-histories
+
+# Make sure you run this from the practical branch.
 ```
