@@ -12,33 +12,33 @@
 
 /* For Webkit Browsers (e.g., Chrome, Safari) */
 *::-webkit-scrollbar {
-    width: 3px;
-    background-color: transparent; /* Optional: transparent background */
+    width: 3px !important;
+    background-color: transparent !important; /* Optional: transparent background */
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgba(211, 211, 211, 0.7); /* Light color */
-    border-radius: 10px;
-    transition: background-color 0.2s ease-in-out;
+    background-color: rgba(211, 211, 211, 0.7) !important; /* Light color */
+    border-radius: 10px !important;
+    transition: background-color 0.2s ease-in-out !important;
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(169, 169, 169, 0.9); /* Slightly darker on hover */
+    background-color: rgba(169, 169, 169, 0.9) !important; /* Slightly darker on hover */
 }
 
 *::-webkit-scrollbar-track {
-    background-color: rgba(245, 245, 245, 1); /* Background color similar to the image */
+    background-color: rgba(245, 245, 245, 1) !important; /* Background color similar to the image */
 }
 
 /* For Firefox */
 * {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(211, 211, 211, 0.7) rgba(245, 245, 245, 1);
+    scrollbar-width: thin !important;
+    scrollbar-color: rgba(211, 211, 211, 0.7) rgba(245, 245, 245, 1) !important;
 }
 
 * {
     &:hover {
-        scrollbar-width: thin;
-        scrollbar-color: rgba(169, 169, 169, 0.9) rgba(245, 245, 245, 1);
+        scrollbar-width: thin !important;
+        scrollbar-color: rgba(169, 169, 169, 0.9) rgba(245, 245, 245, 1) !important;
     }
 }
