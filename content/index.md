@@ -65,6 +65,6 @@ cron.schedule("0 0 * * *", () => {
 ```
 
 ```dataview
-LIST FROM #content
+LIST FROM #stats
 ```
-![Hua](public/static/daughter.jpeg)
+![Hua](/static/daughter.jpeg)
