@@ -12,7 +12,7 @@
 
 /* For Webkit Browsers (e.g., Chrome, Safari) */
 *::-webkit-scrollbar {
-    width: 2px;
+    width: 1px;
     background-color: transparent; /* Optional: transparent background */
 }
 
@@ -23,8 +23,7 @@
 }
 
 *::-webkit-scrollbar-thumb:hover {
-    width: 5px;
-    background-color: rgba(169, 169, 169, 0.8); /* Slightly darker on hover */
+    background-color: rgba(0, 0, 0, 1); /* Slightly darker on hover */
 }
 
 *::-webkit-scrollbar-track {
