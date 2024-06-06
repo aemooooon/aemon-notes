@@ -13,7 +13,6 @@ export default ((opts?: Options) => {
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <hr />
         <script
           src="https://giscus.app/client.js"
           data-repo="aemooooon/aemon-notes"
@@ -30,8 +29,7 @@ export default ((opts?: Options) => {
           data-loading="lazy"
           crossorigin="anonymous"
           async
-        ></script>
-        <hr />
+        />
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
