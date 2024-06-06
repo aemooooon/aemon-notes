@@ -3,14 +3,14 @@ title: Home
 draft: false
 tags:
 ---
-吾日三省吾身，吾身何患无成？不积跬步，无以至千里；不积小流，无以成东海。
-
 ```typescript
 /**
  * Daily reflection and persistent efforts lead to success.
  * 吾日三省吾身，吾身何患无成？
  * 不积跬步，无以至千里；不积小流，无以成东海。
  */
+
+[[public/static/daughter.jpeg]]
 
 import cron from "node-cron"
 type Action = "Keep practising" | "Keep considering" | "Making notes"
@@ -65,3 +65,12 @@ cron.schedule("0 0 * * *", () => {
   console.log("Daily routine executed at:", new Date().toLocaleString())
 })
 ```
+
+>[!Data Science]
+>[[Probability Density Function]]
+>[[Cumulative Distribution Function]]
+>[[Linear Regression]]
+
+>[!Operating System]
+>[[Forward Port with Tunnel]]
+>[[System Services Management]]
