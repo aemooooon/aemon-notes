@@ -10,8 +10,6 @@ tags:
  * 不积跬步，无以至千里；不积小流，无以成东海。
  */
 
-[[public/static/daughter.jpeg]]
-
 import cron from "node-cron"
 type Action = "Keep practising" | "Keep considering" | "Making notes"
 
@@ -66,11 +64,16 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
->[!Data Science]
+>[!Data-Science]
 >[[Probability Density Function]]
+>
 >[[Cumulative Distribution Function]]
+>
 >[[Linear Regression]]
 
->[!Operating System]
+>[!Operating-System]
 >[[Forward Port with Tunnel]]
+>
 >[[System Services Management]]
+
+![[public/static/daughter.jpeg]]
