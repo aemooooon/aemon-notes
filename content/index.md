@@ -64,16 +64,7 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
->[!Data-Science]
->[[Probability Density Function]]
->
->[[Cumulative Distribution Function]]
->
->[[Linear Regression]]
-
->[!Operating-System]
->[[Forward Port with Tunnel]]
->
->[[System Services Management]]
-
-![[public/static/daughter.jpeg]]
+```dataview
+LIST FROM #content
+```
+![Hua](public/static/daughter.jpeg)
