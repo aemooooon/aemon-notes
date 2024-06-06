@@ -14,6 +14,24 @@ export default ((opts?: Options) => {
     return (
       <footer class={`${displayClass ?? ""}`}>
         <hr />
+        <script
+          src="https://giscus.app/client.js"
+          data-repo="aemooooon/aemon-notes"
+          data-repo-id="R_kgDOL_0zNQ"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOL_0zNc4Cf5cw"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="top"
+          data-theme="light"
+          data-lang="en"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async
+        ></script>
+        <hr />
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
