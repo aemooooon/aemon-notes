@@ -30,18 +30,22 @@ tags:
    其中，$\mu$是均值，$\sigma$是标准差。
 
 2. **均匀分布（Uniform Distribution）**
-   $$ f(x) = 
+   $$
+   f(x) = 
    \begin{cases} 
    \frac{1}{b - a} & \text{if } a \leq x \leq b \\
    0 & \text{otherwise}
-   \end{cases} $$
+   \end{cases}
+   $$
 
 3. **指数分布（Exponential Distribution）**
-   $$ f(x) = 
+   $$
+   f(x) = 
    \begin{cases} 
    \lambda \exp(-\lambda x) & \text{if } x \geq 0 \\
    0 & \text{if } x < 0
-   \end{cases} $$
+   \end{cases}
+   $$
    其中，$\lambda$是率参数。
 
 ### 示例

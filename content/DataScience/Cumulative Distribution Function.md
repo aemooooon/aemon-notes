@@ -63,22 +63,26 @@ $$ F(x) = P(X \leq x) $$
 
    对于区间$[a, b]$上的均匀分布，CDF为：
 
-   $$ F(x) =
+   $$
+   F(x) =
    \begin{cases}
    0 & \text{if } x < a \\
    \frac{x - a}{b - a} & \text{if } a \leq x \leq b \\
    1 & \text{if } x > b
-   \end{cases} $$
+   \end{cases}
+   $$
 
 3. **指数分布（Exponential Distribution）：**
 
    对于参数为$\lambda$的指数分布，CDF为：
 
-   $$ F(x) =
+   $$
+   F(x) =
    \begin{cases}
    1 - \exp(-\lambda x) & \text{if } x \geq 0 \\
    0 & \text{if } x < 0
-   \end{cases} $$
+   \end{cases}
+   $$
 
    ```python
    from scipy.stats import expon
