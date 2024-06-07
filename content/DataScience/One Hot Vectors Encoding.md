@@ -105,3 +105,8 @@ tf.Tensor(
  [0. 0. 1.]], shape=(5, 3), dtype=float32)
 ```
 
+**Statistical power** refers to the ability of a model to reliably identify real relationships between features and labels. 
+
+One-hot encoding reduces statistical power more than continuous or ordinal data, because it requires multiple columns – one for each possible categorical value. For example, if we one-hot encode the port of embarkation, we add three model inputs (C, S, and Q).
+
+A categorical variable becomes helpful if the number of categories is substantially less than the number of samples (dataset rows). A categorical variable also becomes helpful if it provides information not already available to the model through other inputs.
