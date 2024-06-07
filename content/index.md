@@ -64,16 +64,16 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
-[[Linear Regression]]
-[[Logistic Regression]]
-[[Continuous Variables]]
-[[Cumulative Distribution Function]]
-[[Discrete Variables]]
-[[Multinomial Logistic Regression]]
-[[One Hot Vectors Encoding]]
-[[Probability Density Function]]
-[[Saving and Loading Model]]
-[[Related Metrics]]
-[[Variable Classification]]
+- [[Linear Regression]]
+- [[Logistic Regression]]
+- [[Continuous Variables]]
+- [[Cumulative Distribution Function]]
+- [[Discrete Variables]]
+- [[Multinomial Logistic Regression]]
+- [[One Hot Vectors Encoding]]
+- [[Probability Density Function]]
+- [[Saving and Loading Model]]
+- [[Related Metrics]]
+- [[Variable Classification]]
 
 ![Hua](/static/daughter.jpeg)
