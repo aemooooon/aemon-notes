@@ -64,13 +64,16 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
- - [Continuous Variables](app://obsidian.md/content/DataScience/Continuous%20Variables.md)
- - [Cumulative Distribution Function](app://obsidian.md/content/DataScience/Cumulative%20Distribution%20Function.md)
- - [Discrete Variables](app://obsidian.md/content/DataScience/Discrete%20Variables.md)
- - [Probability Density Function](app://obsidian.md/content/DataScience/Probability%20Density%20Function.md)
- - [Linear Regression](app://obsidian.md/content/DataScience/Linear%20Regression.md)
- - [Related Metrics](app://obsidian.md/content/DataScience/Related%20Metrics.md)
- - [Statistics](app://obsidian.md/content/DataScience/Statistics.md)
- - [Variable Classification](app://obsidian.md/content/DataScience/Variable%20Classification.md)
+[[Linear Regression]]
+[[Logistic Regression]]
+[[Continuous Variables]]
+[[Cumulative Distribution Function]]
+[[Discrete Variables]]
+[[Multinomial Logistic Regression]]
+[[One Hot Vectors Encoding]]
+[[Probability Density Function]]
+[[Saving and Loading Model]]
+[[Related Metrics]]
+[[Variable Classification]]
 
 ![Hua](/static/daughter.jpeg)
