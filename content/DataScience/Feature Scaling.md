@@ -5,17 +5,19 @@ tags:
   - model
 date: 2024-06-09
 ---
-# 归一化（Normalization）
+![[FeatureScaling.png]]
+*Using a standardised dataset allowed the model to converge much faster*
+# Normalisation
 
-## Min-Max 归一化
+## Min-Max 
 
-**定义**：
-将数据缩放到一个特定的范围内，通常是 0 到 1。
+>[!Definition]
+>Normalisation is a data preprocessing technique used to scale features to a specified range, typically 0 to 1. This process ensures that different features contribute equally to the model and helps in faster and more stable learning. Normalisation is achieved by transforming the original values using the following formula:
 
-**公式**：
 $$
 x_{\text{norm}} = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
 $$
+where $x$ is the original value, $x_{\text{min}}$​ is the minimum value of the feature, and $x_{\text{max}}$​ is the maximum value of the feature.
 
 **代码示例**：
 ```python
@@ -27,7 +29,7 @@ normalized_data = scaler.fit_transform(data)
 print("Min-Max Normalized Data:\n", normalized_data)
 ```
 
-## MaxAbs 归一化
+## MaxAbs 
 
 **定义**：
 将每个特征的绝对最大值缩放为 1。
@@ -47,17 +49,19 @@ maxabs_data = scaler.fit_transform(data)
 print("MaxAbs Normalized Data:\n", maxabs_data)
 ```
 
-# 标准化（Standardization）
+# Standardisation
 
 ## Z-score 标准化
 
-**定义**：
-减去均值并除以标准差。
+>[!Definition]
+>Standardisation is another data preprocessing technique used to scale features by removing the mean and scaling to unit variance. This process centres the data around zero with a standard deviation of one, which helps in stabilising the learning process for machine learning models. Standardisation is performed using the following formula:
 
-**公式**：
+
 $$
 x_{\text{std}} = \frac{x - \mu}{\sigma}
 $$
+
+where $s$ is the original value, $\mu$ is the mean of the feature, and $\sigma$ is the standard deviation of the feature.
 
 **代码示例**：
 ```python
