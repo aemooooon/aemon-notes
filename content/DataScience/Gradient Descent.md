@@ -92,3 +92,72 @@ print(f"模型参数: {theta}")
 ## Adam（Adaptive Moment Estimation）
 结合了动量梯度下降和RMSProp的优点，既能够加速收敛，又能处理非平稳目标，广泛应用于深度学习中。
 
+---
+# GridSearchCV
+
+# 概念
+
+`GridSearchCV` 是 Scikit-Learn 库中的一个模块，用于执行网格搜索（Grid Search）以优化模型参数。它遍历给定参数网格的所有可能组合，并使用交叉验证（Cross-Validation）来评估每个组合的性能，最终选择表现最好的参数组合。
+
+# 方法
+
+1. **定义参数网格**：指定待调参数及其候选值。
+2. **穷举搜索**：遍历参数网格的所有可能组合。
+3. **交叉验证**：对每个参数组合进行交叉验证，计算模型性能。
+4. **选择最佳参数**：选择具有最佳交叉验证性能的参数组合。
+
+# 代码示例
+
+以下是使用 Python 实现 `GridSearchCV` 的示例：
+
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+
+# 定义模型
+model = RandomForestClassifier()
+
+# 定义参数网格
+param_grid = {
+    'n_estimators': [50, 100, 200],
+    'max_depth': [None, 10, 20, 30],
+    'min_samples_split': [2, 5, 10]
+}
+
+# 执行网格搜索
+grid_search = GridSearchCV(estimator=model, param_grid=param_grid, cv=5, scoring='accuracy')
+grid_search.fit(X_train, y_train)
+
+# 输出最佳参数组合
+print(f"最佳参数组合: {grid_search.best_params_}")
+```
+
+# 应用
+
+`GridSearchCV` 广泛应用于各种机器学习模型的超参数调优。例如：
+- **随机森林**：优化树的数量、树的最大深度等参数。
+- **支持向量机**：优化核函数类型、正则化参数等。
+- **K 近邻算法**：优化邻居数量、距离度量方式等。
+
+# 优缺点
+
+## 优点
+- **系统全面**：遍历所有可能的参数组合，确保找到全局最优解。
+- **易于理解和实现**：通过简单的 API 调用即可完成复杂的参数搜索。
+
+## 缺点
+- **计算复杂度高**：参数组合数量多时，计算开销大，耗时长。
+- **不适合大数据集**：在大数据集上执行时，可能导致内存不足或处理时间过长。
+
+# 类似算法
+
+除了 `GridSearchCV`，还有其他一些超参数优化算法：
+
+## RandomizedSearchCV
+随机搜索方法，通过随机选择参数组合进行评估，减少计算复杂度。
+
+## Bayesian Optimization
+贝叶斯优化，通过构建代理模型来估计和优化目标函数，以找到最优参数组合。
+
+## Hyperopt
+基于树结构的贝叶斯优化算法，适用于高维参数空间的优化。
