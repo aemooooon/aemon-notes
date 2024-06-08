@@ -4,7 +4,9 @@ draft: false
 tags:
   - classification
   - topicmodel
+date: 2024-06-04
 ---
+
 > [!important]
 > **Word normalisation** is a crucial preprocessing step in Natural Language Processing (NLP) that aims to reduce words to a standard form, thereby improving the performance and accuracy of various text analysis tasks. This note covers different techniques for word normalization, including their concepts, applications, advantages, and disadvantages.
 

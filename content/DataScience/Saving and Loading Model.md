@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - model
+date: 2024-06-07
 ---
+
 # Saving and Loading Model
 
 >[!Introduction]

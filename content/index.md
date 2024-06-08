@@ -1,8 +1,10 @@
 ---
 title: Home
 draft: false
-tags:
+tags: 
+date: 2024-05-20
 ---
+
 ```typescript
 /**
  * Daily reflection and persistent efforts lead to success.

@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - stats
+date: 2024-06-06
 ---
+
 # Problem: Analyzing Dice Rolls
 
 >[!Problem]

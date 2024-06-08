@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - postgresql
+date: 2024-06-01
 ---
+
 
 `psql -h hostname -U user -p port`
 

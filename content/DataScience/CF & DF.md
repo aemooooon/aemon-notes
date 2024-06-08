@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - topicmodel
+date: 2024-06-05
 ---
+
 >[!Collection Frequency]
 >词频是指一个词在整个语料库中出现的总次数。它反映了该词在文本中的总体重要性。
 

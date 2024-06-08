@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - service
+date: 2024-06-01
 ---
+
 
 
 `sudo vim /etc/systemd/system/individual-example.service`

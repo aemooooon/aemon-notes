@@ -4,7 +4,9 @@ draft: false
 tags:
   - topicmodel
   - classification
+date: 2024-06-04
 ---
+
 
 > [!Overview]
 > Text preprocessing is a crucial step in Natural Language Processing (NLP) that aims to prepare raw text data for various analytical tasks such as topic modeling, text classification, and sentiment analysis. This note covers various text preprocessing techniques, including their concepts, applications, advantages, and disadvantages. Additionally, it discusses how to choose and apply these techniques based on different research purposes and themes.

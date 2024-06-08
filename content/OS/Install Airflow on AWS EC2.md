@@ -4,7 +4,9 @@ draft: false
 tags:
   - aws
   - ec2
+date: 2024-06-03
 ---
+
 
 1. Create an `airflow` folder and then get into it
 2. Create a [Python3 virtual environment](Python%20Virtual%20Environment.md) in it

@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - git
+date: 2024-06-06
 ---
+
 
 ```bash
 # view logs/records and 临时暂存工作搞点别的再回来

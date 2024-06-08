@@ -1,8 +1,10 @@
 ---
 title: 
 draft: false
-tags:
+tags: 
+date: 2024-06-06
 ---
+
 
 ## 命令行
 ```bash

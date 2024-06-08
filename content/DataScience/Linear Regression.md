@@ -4,7 +4,9 @@ draft: false
 tags:
   - regression
   - stats
+date: 2024-06-05
 ---
+
 > [!Definition]
 > 线性回归是一种基本的回归分析方法，用于描述两个变量之间的线性关系。简单线性回归模型的形式为：
 

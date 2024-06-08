@@ -4,7 +4,9 @@ draft: false
 tags:
   - model
   - classification
+date: 2024-06-08
 ---
+
 >[!Logistic Regression]
 >Logistic regression is a type of _classification_ model that works similarly to linear regression. The difference between this and linear regression is the shape of the curve. While simple linear regression fits a straight line to data, logistic regression models fit an s-shaped curve: Logistic regression is better for estimating Boolean outcomes than linear regression because the logistic curve always produces a value between 0 (false) and 1 (true). Anything between these two values can be thought of as a probability.
 

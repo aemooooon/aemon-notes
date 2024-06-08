@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - stats
+date: 2024-06-07
 ---
+
 >[!Definition]
 >One-hot vectors are a common way to represent categorical data as numerical data in machine learning. In a one-hot encoding, each category is represented as a binary vector, where only one element is `1` (hot), and all others are `0`.
 

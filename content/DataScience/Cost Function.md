@@ -5,7 +5,9 @@ tags:
   - model
   - regression
   - logistic
+date: 2024-06-09
 ---
+
 
 
 >[!Cost Function]

@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - stats
+date: 2024-06-06
 ---
+
 
 ### 累积分布函数（Cumulative Distribution Function, CDF）
 

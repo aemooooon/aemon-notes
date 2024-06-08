@@ -4,7 +4,9 @@ draft: false
 tags:
   - env
   - python
+date: 2024-06-03
 ---
+
 
 > [!aspiration]
 > 最近发现很多Data Science的同学，学了半年480，还不知道如何正确的管理自己的Python Project，运行环境和版本控制工具。所以弄一个note放在这里！

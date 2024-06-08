@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - stats
+date: 2024-06-02
 ---
+
 
 # 数据科学基础术语
 

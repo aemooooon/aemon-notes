@@ -4,7 +4,9 @@ draft: false
 tags:
   - pm2
   - service
+date: 2024-06-06
 ---
+
 
 ### Installing PM2 Globally
 

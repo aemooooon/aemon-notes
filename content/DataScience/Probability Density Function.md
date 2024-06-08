@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - stats
+date: 2024-06-06
 ---
+
 
 ### 概率密度函数（Probability Density Function, PDF）
 

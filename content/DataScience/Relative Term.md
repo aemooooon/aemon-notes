@@ -5,7 +5,9 @@ tags:
   - topicmodel
   - classification
   - textmining
+date: 2024-06-04
 ---
+
 # Bag of Words (BoW)
 
 > [!Definition]

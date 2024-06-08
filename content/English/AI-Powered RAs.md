@@ -2,7 +2,11 @@
 tags:
   - English
   - Data416
+title: 
+draft: false
+date: 2024-05-27
 ---
+
 Hello everyone, 大家好, Tēnā koutou katoa, my name is Hua. I am really happy to have you guys here. Today, I'm going to talk about artificial intelligence-powered recommendation algorithms, also known as RAs. I will divide my presentation into five parts. This is my overview of what we'll be covering:
 
 - I am gonna to briefly explain what it is RAs and its history.

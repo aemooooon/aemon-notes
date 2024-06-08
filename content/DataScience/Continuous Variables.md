@@ -3,7 +3,9 @@ title:
 draft: false
 tags:
   - stats
+date: 2024-06-08
 ---
+
 > Calculating Mean, Mode, Median, Quantiles, Maximum, Minimum, and Outliers
 
 ```python
