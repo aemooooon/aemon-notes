@@ -110,6 +110,33 @@ beta_1 = numerator / denominator
 print(f'Slope (beta_1): {beta_1}')
 ```
 
+# Residual
+
+![[residual.png]]
+Most commonly, we fit a model by minimising the residual sum of squares. This means that the cost function is calculated like so:
+
+1. Calculate the difference between the actual and predicted values (as previously) for each data point.
+2. Square these values.
+3. Sum (or average) these squared values.
+
+This squaring step means that not all points contribute evenly to the line: outliers—which are points that don't fall in the expected pattern—have disproportionately larger error, which can influence the position of the line.
+
+## Strengths of regression
+
+Regression techniques have many strengths that more complex models don't.
+
+### Predictable and easy to interpret
+
+Regressions are easy to interpret because they describe simple mathematical equations, which we can often graph. More complex models are often referred to as _black box_ solutions, because it's difficult to understand how they make predictions or how they'll behave with certain inputs.
+
+### Easy to extrapolate
+
+Regressions make it easy to extrapolate; to make predictions for values outside the range of our dataset. For example, it's simple to estimate in our previous example that a nine year-old dog will have a temperature of 40.5°C. You should always apply caution to extrapolation: this model would predict that a 90 year-old would have a temperature nearly hot enough to boil water.
+
+### Optimal fitting is usually guaranteed
+
+Most machine learning models use gradient descent to fit models, which involves tuning the gradient descent algorithm and provides no guarantee that an optimal solution will be found. By contrast, linear regression that uses the sum of squares as a cost function doesn't actually need an iterative gradient-descent procedure. Instead, clever mathematics can be used to calculate the optimal location for the line to be placed. The mathematics are outside the scope of this module, but it's useful to know that (so long as the sample size isn't too large) linear regression doesn't need special attention to be paid to the fitting process, and the optimal solution is guaranteed.
+
 # Multiple Linear Regression
 
 >[!Definition]
