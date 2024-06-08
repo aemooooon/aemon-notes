@@ -1,8 +1,10 @@
 ---
 title: 
 draft: false
-tags:
+tags: 
+date: 2024-06-03
 ---
+
 # Latent Dirichlet Allocation (LDA)
 
 > [!Definition]
