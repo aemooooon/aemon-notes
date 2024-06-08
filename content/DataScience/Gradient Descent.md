@@ -11,6 +11,37 @@ date: 2024-06-08
 >[!Gradient Descent]
 >梯度下降（Gradient Descent）是一种优化算法，用于通过最小化成本函数（Loss Function）来找到模型的最优参数。它广泛应用于各种机器学习模型，包括线性回归、逻辑回归和神经网络。
 
+Gradient descent uses calculus to estimate how changing each parameter changes the cost. For example, increasing a parameter might be predicted to reduce the cost.
+
+Gradient descent is named as such because it calculates the gradient (slope) of the relationship between each model parameter and the cost. The parameters are then altered to move down this slope.
+
+This algorithm is simple and powerful, yet it isn't guaranteed to find the optimal model parameters that minimize the cost. The two main sources of error are local minima and instability.
+
+### Local minima
+
+Our previous example looked to do a good job, assuming that cost would have kept increasing when the parameter was smaller than 0 or greater than 10:
+
+![Plot of cost versus model parameter, with a minima for cost when the model parameter is five.](https://learn.microsoft.com/en-nz/training/modules/introduction-to-classical-machine-learning/media/2-6-b.png)
+
+This job wouldn't have been so great if parameters smaller than zero or larger than 10 would have resulted in lower costs, like in this image:
+
+![Plot of cost versus model parameter, with a local minima for cost when the model parameter is five but a lower cost when the model parameter is at negative six.](https://learn.microsoft.com/en-nz/training/modules/introduction-to-classical-machine-learning/media/2-6-c.png)
+
+In the preceding graph, a parameter value of negative seven would have been a better solution than five, because it has a lower cost. Gradient descent doesn't know the full relationship between each parameter and the cost—which is represented by the dotted line—in advance. Therefore, it's prone to finding local minima: parameter estimates that aren't the best solution, but the gradient is zero.
+
+### Instability
+
+A related issue is that gradient descent sometimes shows instability. This instability usually occurs when the step size or learning rate—the amount that each parameter is adjusted by each iteration—is too large. The parameters are then adjusted too far on each step, and the model actually gets worse with each iteration:
+
+![Plot of cost versus model parameter, which shows cost moving in large steps with minimal decrease in cost.](https://learn.microsoft.com/en-nz/training/modules/introduction-to-classical-machine-learning/media/2-6-d.png)
+
+Having a slower learning rate can solve this problem, but might also introduce issues. First, slower learning rates can mean training takes a long time, because more steps are required. Second, taking smaller steps makes it more likely that training settles on a local minima:
+
+![Plot of cost versus model parameter, showing small movements in cost.](https://learn.microsoft.com/en-nz/training/modules/introduction-to-classical-machine-learning/media/2-6-e.png)
+
+By contrast, a faster learning rate can make it easier to avoid hitting local minima, because larger steps can skip over local maxima:
+
+![Plot of cost versus model parameter, with regular movements in cost until a minima is reached.](https://learn.microsoft.com/en-nz/training/modules/introduction-to-classical-machine-learning/media/2-6-f.png)
 # 方法
 
 梯度下降的基本思想是沿着成本函数的梯度（斜率）方向更新模型参数，以找到成本函数的最小值。梯度下降的步骤如下：
