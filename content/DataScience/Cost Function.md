@@ -27,18 +27,65 @@ $$
 - $y_i$ 是第 $i$ 个样本的实际值。
 - $\hat{y}_i$ 是第 $i$ 个样本的预测值。
 
-### 示例代码
+### Interpretation of MSE
+
+1. **Range of MSE**:
+    
+    - The value of MSE ranges from 0 to infinity.
+    - An MSE of 0 indicates a perfect model with no error in predictions.
+2. **Magnitude of MSE**:
+    
+    - **Lower MSE**: Indicates that the model's predictions are close to the actual values, which means the model has better performance.
+    - **Higher MSE**: Indicates that the model's predictions are far from the actual values, which suggests poor model performance.
+3. **Contextual Interpretation**:
+    
+    - The absolute value of MSE depends on the scale of the data. For example, if the target variable values are large, even a large MSE might be acceptable. Conversely, for smaller target values, a smaller MSE is expected.
+
+### Practical Example
+
+Consider the following example to illustrate how to compute and interpret MSE using Python:
+
 ```python
 import numpy as np
+from sklearn.metrics import mean_squared_error
 
-# 实际值和预测值
-y_true = np.array([1, 2, 3, 4, 5])
-y_pred = np.array([1.1, 1.9, 3.2, 4.0, 5.1])
+# Actual and predicted values
+y_actual = np.array([100, 150, 200, 250, 300])
+y_predicted = np.array([110, 140, 210, 240, 310])
 
-# 计算MSE
-mse = np.mean((y_true - y_pred) ** 2)
-print(f"MSE: {mse}")
+# Calculate MSE
+mse = mean_squared_error(y_actual, y_predicted)
+
+print(f"Mean Squared Error: {mse}")
 ```
+
+In this example:
+
+- The `mean_squared_error` function from `sklearn.metrics` is used to calculate the MSE between the actual and predicted values.
+- The computed MSE provides a numerical value that indicates the average squared difference between the actual and predicted values.
+
+### How to Interpret the MSE Value
+
+1. **Comparative Analysis**:
+    
+    - MSE should be interpreted relatively rather than absolutely. Comparing MSE across different models or different configurations of the same model can help identify the best-performing model.
+    - Lower MSE across different models indicates a better fit to the data.
+2. **Scale of Data**:
+    
+    - Always consider the scale of the target variable. For example, an MSE of 10 might be acceptable for target values in the range of 0-100, but not for values in the range of 0-10.
+3. **Application-Specific Benchmarks**:
+    
+    - Depending on the application, there may be specific benchmarks or acceptable error margins. For example, in financial forecasting, even a small MSE might be significant, while in temperature prediction, a slightly higher MSE might be acceptable.
+
+### Example Interpretation
+
+Let's interpret the MSE value from the previous example:
+
+```python
+Mean Squared Error: 100.0
+```
+
+This value of 100.0 means that, on average, the square of the errors (the differences between the actual and predicted values) is 100. Given the context that our actual values range from 100 to 300, an MSE of 100 indicates that the model's predictions are reasonably close to the actual values, but there is still room for improvement.
 
 ## 2. 绝对误差和（Sum of Absolute Differences, SAD）
 
