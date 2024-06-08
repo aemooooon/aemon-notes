@@ -4,7 +4,7 @@ draft: false
 tags:
   - stats
 ---
-# Calculating Mean, Mode, Median, Quantiles, Maximum, Minimum, and Outliers
+> Calculating Mean, Mode, Median, Quantiles, Maximum, Minimum, and Outliers
 
 ```python
 import numpy as np
