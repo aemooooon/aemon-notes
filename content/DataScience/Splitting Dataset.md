@@ -134,3 +134,58 @@ mse_test = mean_squared_error(y_test, y_test_pred)
 print("MSE on training set:", mse_train)
 print("MSE on test set:", mse_test)
 ```
+
+### Nuances of Test Sets
+
+#### Test Sets Can Be Misleading
+
+Although test sets are helpful to identify overtraining, they can provide us with false confidence. Specifically, test sets are only useful if they reflect data that we expect to see in the real world. For example, if our test set is very small, it won't be representative of the variety of data that we're likely to see in the real world. Test datasets are also only as good as their source. If our test dataset comes from a biased source, our metrics won't reflect how things will behave in the real world.
+
+For example, if we're trying to find the relationship between the number of rescues and the age a dog started training, a small or biased test set might not accurately represent the real-world scenario.
+
+#### Test Sets Aren't Free
+
+We've already seen that the more training data we have, the less likely our model will overfit. Similarly, the larger the test sets, the more we feel we can trust our test results. However, we usually work with finite amounts of data, and a datapoint can't be in both the training and the test set. This means that as we get larger test sets, we get smaller training datasets and vice versa. Exactly how much data should be sacrificed to appear in the test dataset depends on individual circumstances, with anything between 10-50% being relatively common, depending on the volume of data available.
+
+#### Train and Test Isn't the Only Approach
+
+It's worth keeping in mind that train-and-test is common, but not the only widely used approach. Two of the more common alternatives are the hold-out approach and statistical approach methods.
+
+- **The Hold-Out Approach**: Like train-and-test, but instead of splitting a dataset into two, it's split into three: training, test (also known as validation), and hold-out. The training and test datasets are as we've described previously. The hold-out dataset is a kind of test set that's used only once when we're ready to deploy our model for real-world use.
+    
+- **Statistical Approaches**: Simpler models that have originated in statistics often don't need test datasets. Instead, we can calculate what degree the model is overfit directly as statistical significance: a p-value.
+#### Example
+```python
+import numpy as np
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# Generate example data
+data = pd.DataFrame({
+    'height': np.random.randint(150, 200, 100),
+    'rescues_last_year': np.random.randint(50, 70, 100)
+})
+
+# Split the data
+X = data[['height']]
+y = data['rescues_last_year']
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the model
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# Predict on training and test set
+y_train_pred = model.predict(X_train)
+y_test_pred = model.predict(X_test)
+
+# Evaluate the model
+mse_train = mean_squared_error(y_train, y_train_pred)
+mse_test = mean_squared_error(y_test, y_test_pred)
+
+print("MSE on training set:", mse_train)
+print("MSE on test set:", mse_test)
+
+```
