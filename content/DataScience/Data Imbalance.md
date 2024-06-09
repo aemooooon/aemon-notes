@@ -1,7 +1,9 @@
 ---
 title: 
 draft: false
-tags: 
+tags:
+  - model
+  - classification
 date: 2024-06-09
 ---
 >[!Data Imbalance]
@@ -105,4 +107,27 @@ model_res.fit(X_res, y_res)
 y_pred_res = model_res.predict(X_test)
 print("After resampling:")
 print(classification_report(y_test, y_pred_res))
+```
 
+### 使用随机森林解决数据不平衡问题
+
+随机森林是另一种常用的分类算法，可以通过调整类别权重来处理数据不平衡问题。以下是使用随机森林和 `class_weight` 参数的代码示例：
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+# 使用类别权重重新训练随机森林分类器
+weighted_model = RandomForestClassifier(n_estimators=100, random_state=1, class_weight="balanced")
+weighted_model.fit(X_train, y_train)
+
+# 评估模型性能
+train_pred = weighted_model.predict(X_train)
+test_pred = weighted_model.predict(X_test)
+
+print("Train classification report:")
+print(classification_report(y_train, train_pred))
+print("Test classification report:")
+print(classification_report(y_test, test_pred))
+```
+
+这个示例展示了如何使用 `class_weight="balanced"` 参数自动计算类别权重，并在训练过程中调整模型，使其对少数类别更加敏感。
