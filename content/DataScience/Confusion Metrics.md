@@ -222,3 +222,74 @@ This code will create a heatmap where the intensity of the color represents the 
 
 ![[confusionmatrix.png]]
 
+# Multiple Class Confusion Metrics
+
+
+多类混淆矩阵将二分类混淆矩阵扩展到多类情形。它通过提供预测结果的详细分解来评估分类模型在多个类别上的性能。
+
+## 混淆矩阵的组成部分
+1. **实际标签（行）**：这些表示数据点的真实类别。每一行对应一个实际类别。
+2. **预测标签（列）**：这些表示模型分配的预测类别。每一列对应一个预测类别。
+
+## 示例矩阵
+在提供的矩阵中，我们有四个类别：`animal`（动物）、`hiker`（徒步者）、`rock`（岩石）、`tree`（树）。
+
+$$
+\begin{array}{c|cccc}
+ & \text{animal} & \text{hiker} & \text{rock} & \text{tree} \\
+\hline
+\text{animal} & 28 & 38 & 0 & 0 \\
+\text{hiker} & 30 & 103 & 1 & 0 \\
+\text{rock} & 0 & 1 & 217 & 1 \\
+\text{tree} & 0 & 0 & 1 & 241 \\
+\end{array}
+$$
+
+## 解读每个单元格
+- **真正例（对角线元素）**：这些代表每个类别的正确分类实例。
+  - `animal`：28个实例正确分类为`animal`。
+  - `hiker`：103个实例正确分类为`hiker`。
+  - `rock`：217个实例正确分类为`rock`。
+  - `tree`：241个实例正确分类为`tree`。
+  
+- **假正例（列的非对角线元素）**：这些代表被错误分类为某一特定类别的实例。
+  - 对于`animal`（列1）：30个`hiker`实例，0个`rock`实例和0个`tree`实例被错误分类为`animal`。
+  - 对于`hiker`（列2）：38个`animal`实例，1个`rock`实例和0个`tree`实例被错误分类为`hiker`。
+  - 对于`rock`（列3）：0个`animal`实例，1个`hiker`实例和1个`tree`实例被错误分类为`rock`。
+  - 对于`tree`（列4）：0个`animal`实例，0个`hiker`实例和1个`rock`实例被错误分类为`tree`。
+  
+- **假负例（行的非对角线元素）**：这些代表被错误分类为其他类别的实例。
+  - 对于`animal`（行1）：38个实例被分类为`hiker`，0个实例被分类为`rock`，0个实例被分类为`tree`。
+  - 对于`hiker`（行2）：30个实例被分类为`animal`，1个实例被分类为`rock`，0个实例被分类为`tree`。
+  - 对于`rock`（行3）：0个实例被分类为`animal`，1个实例被分类为`hiker`，1个实例被分类为`tree`。
+  - 对于`tree`（行4）：0个实例被分类为`animal`，0个实例被分类为`hiker`，1个实例被分类为`rock`。
+
+## 可视化
+提供的热力图可视化帮助快速识别正确和错误预测的数量：
+- 深色代表较高的值，表示该类别中的实例较多。
+- 浅色代表较低的值，表示该类别中的实例较少。
+
+![Confusion Matrix Heatmap](multipleconfusionmatrix.jpg)
+## 计算指标
+从混淆矩阵中，我们可以计算各个类别的多种性能指标：
+
+- **准确率（Accuracy）**：正确预测的总数量的比例。
+  $$
+  \text{准确率} = \frac{28 + 103 + 217 + 241}{\text{总实例数}}
+  $$
+
+- 各个类别的**精确率（Precision）**：正确的正类预测占所有正类预测的比例。
+  $$
+  \text{精确率}_{\text{animal}} = \frac{28}{28 + 30 + 0 + 0}
+  $$
+
+- 各个类别的**召回率（Recall）**：正确的正类预测占所有实际正类的比例。
+  $$
+  \text{召回率}_{\text{animal}} = \frac{28}{28 + 38}
+  $$
+
+- 各个类别的**F1分数（F1 Score）**：精确率和召回率的调和平均数。
+  $$
+  \text{F1分数}_{\text{animal}} = 2 \times \frac{\text{精确率}_{\text{animal}} \times \text{召回率}_{\text{animal}}}{\text{精确率}_{\text{animal}} + \text{召回率}_{\text{animal}}}
+  $$
+
