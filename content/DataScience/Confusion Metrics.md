@@ -147,6 +147,7 @@ Various evaluation metrics can be derived from the confusion matrix to assess th
    \text{Specificity} = \frac{TN}{TN + FP}
    $$
 
+6. **假阳性率 (False Positive Rate, FPR)**：实际为负类的样本中被错误预测为正类的比例。 $$ \text{假阳性率} = \frac{FP}{FP + TN} $$
 #### Example
 
 Here is an example using scikit-learn to create a confusion matrix and compute the above evaluation metrics:
@@ -273,23 +274,25 @@ $$
 ## 计算指标
 从混淆矩阵中，我们可以计算各个类别的多种性能指标：
 
-- **准确率（Accuracy）**：正确预测的总数量的比例。
+以下是将上述笔记转换为英文并且以较小字体显示的版本：
+
+
+- **Accuracy**: The proportion of correctly predicted instances.
   $$
-  \text{准确率} = \frac{28 + 103 + 217 + 241}{\text{总实例数}}
+  \text{Accuracy} = \frac{28 + 103 + 217 + 241}{\text{Total Instances}}
   $$
 
-- 各个类别的**精确率（Precision）**：正确的正类预测占所有正类预测的比例。
+- **Precision for each class**: The proportion of true positive predictions out of all positive predictions.
   $$
-  \text{精确率}_{\text{animal}} = \frac{28}{28 + 30 + 0 + 0}
-  $$
-
-- 各个类别的**召回率（Recall）**：正确的正类预测占所有实际正类的比例。
-  $$
-  \text{召回率}_{\text{animal}} = \frac{28}{28 + 38}
+  \text{Precision}_{\text{animal}} = \frac{28}{28 + 30 + 0 + 0}
   $$
 
-- 各个类别的**F1分数（F1 Score）**：精确率和召回率的调和平均数。
+- **Recall for each class**: The proportion of true positive predictions out of all actual positive instances.
   $$
-  \text{F1分数}_{\text{animal}} = 2 \times \frac{\text{精确率}_{\text{animal}} \times \text{召回率}_{\text{animal}}}{\text{精确率}_{\text{animal}} + \text{召回率}_{\text{animal}}}
+  \text{Recall}_{\text{animal}} = \frac{28}{28 + 38}
   $$
 
+- **F1 Score for each class**: The harmonic mean of precision and recall.
+  $$
+  \text{F1 Score}_{\text{animal}} = 2 \times \frac{\text{Precision}_{\text{animal}} \times \text{Recall}_{\text{animal}}}{\text{Precision}_{\text{animal}} + \text{Recall}_{\text{animal}}}
+  $$
