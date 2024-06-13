@@ -7,9 +7,9 @@ date: 2024-06-08
 ---
 ## Goodness of Fit: R²
 
-### 概念
 
-R² (R-squared) 是衡量回归模型拟合优度（Goodness of Fit）的统计指标。它表示自变量解释的因变量总变异的比例。R² 值在 0 到 1 之间，值越接近 1，说明模型解释的变异越多，拟合效果越好。
+>[!R² (R-squared) Coefficient of Determination 决定系数]
+>是衡量回归模型拟合优度（Goodness of Fit）的统计指标。它表示自变量解释的因变量总变异的比例。R² 值在 0 到 1 之间，值越接近 1，说明模型解释的变异越多，拟合效果越好。
 
 ### 公式
 
@@ -96,3 +96,5 @@ $$
 $$
 
 
+#### **Coefficient of Determination (usually known as [[R Squared]] or R<sup>2</sup>)**: 
+A relative metric in which the higher the value, the better the fit of the model. In essence, this metric represents how much of the variance between predicted and actual label values the model is able to explain.
