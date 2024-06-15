@@ -5,13 +5,14 @@ tags:
 date: 2024-06-09
 ---
 
-Receiver operator characteristic curves are a powerful way to assess and fine-tune trained classification models.
-
-We can assess our classification models in terms of the kinds of mistakes that they make, such as false negatives and false positives. This can give insight into the kinds of mistakes a model makes, but doesn't necessarily provide deep information on how the model could perform if slight adjustments were made to its decision criteria. Here, we'll discuss receiver operator characteristic (ROC) curves, which build on the idea of a confusion matrix but provide us with deeper information that lets us improve our models to a greater degree.
+>[!Receiver operator characteristic curves]
+> are a powerful way to assess and fine-tune trained classification models. We can assess our classification models in terms of the kinds of mistakes that they make, such as false negatives and false positives. This can give insight into the kinds of mistakes a model makes, but doesn't necessarily provide deep information on how the model could perform if slight adjustments were made to its decision criteria. Here, we'll discuss receiver operator characteristic (ROC) curves, which build on the idea of a confusion matrix but provide us with deeper information that lets us improve our models to a greater degree.
 
 If the true positive rate is very high, but the false positive rate is also very high, then the model is biased;
 
 ROC 曲线展示了分类模型在所有可能的决策阈值下，真阳性率和假阳性率之间的权衡。
+
+可以通过ROC来找到最优的分类阈值 [[Youden's Index]]
 
 ### 真阳性率 (True Positive Rate, TPR)
 $$

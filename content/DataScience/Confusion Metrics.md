@@ -148,6 +148,26 @@ Various evaluation metrics can be derived from the confusion matrix to assess th
    $$
 
 6. **假阳性率 (False Positive Rate, FPR)**：实际为负类的样本中被错误预测为正类的比例。 $$ \text{假阳性率} = \frac{FP}{FP + TN} $$
+#### 什么是 Balanced Accuracy?
+
+**Balanced Accuracy** 是一种衡量分类模型性能的指标，特别适用于处理类别不平衡的数据集。它考虑了每个类别的分类准确性，以避免因为某个类别样本数量过多而导致的偏差。计算方式如下：
+
+$$
+\text{Balanced Accuracy} = \frac{\text{Sensitivity} + \text{Specificity}}{2}
+$$
+
+其中：
+- **Sensitivity (召回率)**：正确识别正类样本的比例。
+- **Specificity (特异性)**：正确识别负类样本的比例。
+
+##### 解释
+
+1. **Balanced Accuracy = 0**:
+   - 这意味着模型没有正确分类任何一个样本，无论是正类还是负类样本的识别率都为 0。
+   
+2. **Balanced Accuracy = 1**:
+   - 这意味着模型完美地分类了所有样本，正类和负类样本的识别率都为 1。
+
 #### Example
 
 Here is an example using scikit-learn to create a confusion matrix and compute the above evaluation metrics:
