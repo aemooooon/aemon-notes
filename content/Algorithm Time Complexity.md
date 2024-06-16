@@ -238,9 +238,9 @@ complexities = {
     "O(log n)": np.log(n),
     "O(n)": n,
     "O(n log n)": n * np.log(n),
-    "O(n^2)": n ** 2,
-    "O(2^n)": 2 ** n,
-    "O(n!)": [math.factorial(i) for i in n_factorial]
+    "O(n^2)": n**2,
+    "O(2^n)": 2**n,
+    "O(n!)": [math.factorial(i) for i in n_factorial],
 }
 
 # 绘制图形 (Plot the graph)
@@ -251,14 +251,12 @@ for label, y in complexities.items():
     else:
         plt.plot(n, y, label=label)
 
-plt.ylim(1, 10**3)  # 设置纵坐标范围 (Set y-axis range)
-plt.xlim(1
-
-, 10)     # 设置横坐标范围 (Set x-axis range)
-plt.yscale('log')   # 使用对数刻度 (Use logarithmic scale)
-plt.xlabel('Input Size (n)')
-plt.ylabel('Operations')
-plt.title('Time Complexity of Different Algorithms')
+plt.ylim(1, 10**5)
+plt.xlim(1, 10)
+plt.yscale("log")
+plt.xlabel("Input Size (n)")
+plt.ylabel("Operations")
+plt.title("Time Complexity of Different Algorithms")
 plt.legend()
 plt.grid(True)
 plt.show()
