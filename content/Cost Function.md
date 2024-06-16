@@ -10,16 +10,16 @@ date: 2024-06-09
 
 # Definition
 
->[!Cost Function]
+>[!important]
 >A loss function, also known as a cost function or objective function, is a mathematical function that quantifies the difference between the predicted values and the actual values in a machine learning model. The goal of training a model is to minimize this difference, thereby improving the model's accuracy. 
 >
 >在机器学习中，成本函数（Cost Function），也叫损失函数（Loss Function），用于衡量模型的预测结果与实际结果之间的差异。成本函数的值越小，表示模型的预测越准确。通过最小化成本函数，我们可以训练模型，使其预测更加准确。
 
 # Purpose
 
-The primary purpose of a loss function is to guide the training process of a machine learning model. By minimizing the loss, the model learns to make predictions that are closer to the actual outcomes.
+The primary purpose of a loss function is to guide the training process of a machine learning model. By minimising the loss, the model learns to make predictions that are closer to the actual outcomes.
 
-# Type
+# Common Types
 ## 1. Mean Squared Error (MSE)
 
 ### Definition
