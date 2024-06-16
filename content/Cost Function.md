@@ -8,192 +8,280 @@ tags:
 date: 2024-06-09
 ---
 
-
+# Definition
 
 >[!Cost Function]
+>A loss function, also known as a cost function or objective function, is a mathematical function that quantifies the difference between the predicted values and the actual values in a machine learning model. The goal of training a model is to minimize this difference, thereby improving the model's accuracy. 
+>
 >在机器学习中，成本函数（Cost Function），也叫损失函数（Loss Function），用于衡量模型的预测结果与实际结果之间的差异。成本函数的值越小，表示模型的预测越准确。通过最小化成本函数，我们可以训练模型，使其预测更加准确。
 
-# 回归问题的成本函数
+# Purpose
 
-## 1. 均方误差（Mean Squared Error, MSE）
+The primary purpose of a loss function is to guide the training process of a machine learning model. By minimizing the loss, the model learns to make predictions that are closer to the actual outcomes.
 
-### 概念
-均方误差（MSE）是用于回归问题的常用成本函数。它通过计算预测值和实际值之间的差的平方，然后取平均值来衡量模型的性能。
+# Type
+## 1. Mean Squared Error (MSE)
 
-### 公式
+### Definition
+Mean Squared Error (MSE) measures the average of the squares of the errors, which are the differences between the predicted and actual values.
+
+### Formula
 $$
-\text{MSE} = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 
+MSE = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2
 $$
-其中：
-- $N$ 是样本数量。
-- $y_i$ 是第 $i$ 个样本的实际值。
-- $\hat{y}_i$ 是第 $i$ 个样本的预测值。
 
-### Interpretation of MSE
+### Explanation
+- **Range**: \([0, \infty)\). The lower the MSE, the better the model's performance.
+- **Usage**: Commonly used in regression tasks.
+- **Models**: 
+  - Linear Regression
+  - Polynomial Regression
+  - Neural Networks (for regression)
 
-1. **Range of MSE**:
-    
-    - The value of MSE ranges from 0 to infinity.
-    - An MSE of 0 indicates a perfect model with no error in predictions.
-2. **Magnitude of MSE**:
-    
-    - **Lower MSE**: Indicates that the model's predictions are close to the actual values, which means the model has better performance.
-    - **Higher MSE**: Indicates that the model's predictions are far from the actual values, which suggests poor model performance.
-3. **Contextual Interpretation**:
-    
-    - The absolute value of MSE depends on the scale of the data. For example, if the target variable values are large, even a large MSE might be acceptable. Conversely, for smaller target values, a smaller MSE is expected.
+### Considerations
+- Sensitive to outliers due to the squaring of errors.
+- Use when larger errors should be penalized more heavily.
 
-### Practical Example
-
-Consider the following example to illustrate how to compute and interpret MSE using Python:
-
+### Example
 ```python
+# Aemon Wang
+# aemooooon@gmail.com
+
+from sklearn.metrics import mean_squared_error
+import numpy as np
+
+# Actual values
+y_true = np.array([3.0, -0.5, 2.0, 7.0])
+
+# Predicted values
+y_pred = np.array([2.5, 0.0, 2.0, 8.0])
+
+# Calculate MSE
+mse = mean_squared_error(y_true, y_pred)
+print("Mean Squared Error:", mse)
+```
+
+## 2. Mean Absolute Error (MAE)
+
+### Definition
+Mean Absolute Error (MAE) measures the average of the absolute differences between the predicted and actual values.
+
+### Formula
+$$
+MAE = \frac{1}{n} \sum_{i=1}^{n} |y_i - \hat{y}_i|
+$$
+
+### Explanation
+- **Range**: \([0, \infty)\). The lower the MAE, the better the model's performance.
+- **Usage**: Used in regression tasks.
+- **Models**: 
+  - Linear Regression
+  - Polynomial Regression
+  - Neural Networks (for regression)
+
+### Considerations
+- Less sensitive to outliers compared to MSE.
+- Use when all errors should be penalized equally.
+
+### Example
+```python
+# Aemon Wang
+# aemooooon@gmail.com
+
+from sklearn.metrics import mean_absolute_error
+import numpy as np
+
+# Actual values
+y_true = np.array([3.0, -0.5, 2.0, 7.0])
+
+# Predicted values
+y_pred = np.array([2.5, 0.0, 2.0, 8.0])
+
+# Calculate MAE
+mae = mean_absolute_error(y_true, y_pred)
+print("Mean Absolute Error:", mae)
+```
+
+## 3. Huber Loss
+
+### Definition
+Huber Loss is a combination of MSE and MAE that is less sensitive to outliers in data than MSE.
+
+### Formula
+$$
+L_\delta = \begin{cases}
+\frac{1}{2}(y_i - \hat{y}_i)^2 & \text{for } |y_i - \hat{y}_i| \leq \delta \\
+\delta |y_i - \hat{y}_i| - \frac{1}{2}\delta^2 & \text{otherwise}
+\end{cases}
+$$
+
+### Explanation
+- **Range**: \([0, \infty)\). The lower the Huber Loss, the better the model's performance.
+- **Usage**: Used in regression tasks where robustness to outliers is needed.
+- **Models**: 
+  - Linear Regression
+  - Polynomial Regression
+  - Neural Networks (for regression)
+
+### Considerations
+- Combines the advantages of MSE (for small errors) and MAE (for large errors).
+- Use when you need a balance between MSE and MAE.
+
+### Example
+```python
+# Aemon Wang
+# aemooooon@gmail.com
+
 import numpy as np
 from sklearn.metrics import mean_squared_error
 
-# Actual and predicted values
-y_actual = np.array([100, 150, 200, 250, 300])
-y_predicted = np.array([110, 140, 210, 240, 310])
+def huber_loss(y_true, y_pred, delta=1.0):
+    residual = np.abs(y_true - y_pred)
+    condition = residual <= delta
+    squared_loss = 0.5 * np.square(residual)
+    linear_loss = delta * residual - 0.5 * np.square(delta)
+    return np.where(condition, squared_loss, linear_loss).mean()
 
-# Calculate MSE
-mse = mean_squared_error(y_actual, y_predicted)
+# Actual values
+y_true = np.array([3.0, -0.5, 2.0, 7.0])
 
-print(f"Mean Squared Error: {mse}")
+# Predicted values
+y_pred = np.array([2.5, 0.0, 2.0, 8.0])
+
+# Calculate Huber Loss
+hl = huber_loss(y_true, y_pred)
+print("Huber Loss:", hl)
 ```
 
-In this example:
+## 4. Cross-Entropy Loss (Log Loss)
 
-- The `mean_squared_error` function from `sklearn.metrics` is used to calculate the MSE between the actual and predicted values.
-- The computed MSE provides a numerical value that indicates the average squared difference between the actual and predicted values.
+### Definition
+Cross-Entropy Loss measures the performance of a classification model whose output is a probability value between 0 and 1.
 
-### How to Interpret the MSE Value
-
-1. **Comparative Analysis**:
-    
-    - MSE should be interpreted relatively rather than absolutely. Comparing MSE across different models or different configurations of the same model can help identify the best-performing model.
-    - Lower MSE across different models indicates a better fit to the data.
-2. **Scale of Data**:
-    
-    - Always consider the scale of the target variable. For example, an MSE of 10 might be acceptable for target values in the range of 0-100, but not for values in the range of 0-10.
-3. **Application-Specific Benchmarks**:
-    
-    - Depending on the application, there may be specific benchmarks or acceptable error margins. For example, in financial forecasting, even a small MSE might be significant, while in temperature prediction, a slightly higher MSE might be acceptable.
-
-### Example Interpretation
-
-Let's interpret the MSE value from the previous example:
-
-```python
-Mean Squared Error: 100.0
-```
-
-This value of 100.0 means that, on average, the square of the errors (the differences between the actual and predicted values) is 100. Given the context that our actual values range from 100 to 300, an MSE of 100 indicates that the model's predictions are reasonably close to the actual values, but there is still room for improvement.
-
-## 2. 绝对误差和（Sum of Absolute Differences, SAD）
-
-### 概念
-绝对误差和（SAD）计算的是预测值与实际值之间差异的绝对值和。
-
-### 公式
+### Formula
+For binary classification:
 $$
-\text{SAD} = \sum_{i=1}^{N} |y_i - \hat{y}_i| 
+L = -\frac{1}{n} \sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1 - y_i) \log(1 - \hat{y}_i)]
 $$
-其中：
-- $N$ 是样本数量。
-- $y_i$ 是第 $i$ 个样本的实际值。
-- $\hat{y}_i$ 是第 $i$ 个样本的预测值。
 
-### 示例代码
-```python
-import numpy as np
-
-# 实际值和预测值
-y_true = np.array([1, 2, 3, 4, 5])
-y_pred = np.array([1.1, 1.9, 3.2, 4.0, 5.1])
-
-# 计算SAD
-sad = np.sum(np.abs(y_true - y_pred))
-print(f"SAD: {sad}")
-```
-
-## 3. 平方差和（Sum of Squared Differences, SSD）
-
-### 概念
-平方差和（SSD）计算的是预测值与实际值之间差异的平方和。与均方误差不同，SSD 不取平均值。
-
-### 公式
+For multiclass classification:
 $$
-\text{SSD} = \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 
+L = -\frac{1}{n} \sum_{i=1}^{n} \sum_{j=1}^{k} y_{ij} \log(\hat{y}_{ij})
 $$
-其中：
-- $N$ 是样本数量。
-- $y_i$ 是第 $i$ 个样本的实际值。
-- $\hat{y}_i$ 是第 $i$ 个样本的预测值。
 
-### 示例代码
-```python
-import numpy as np
-
-# 实际值和预测值
-y_true = np.array([1, 2, 3, 4, 5])
-y_pred = np.array([1.1, 1.9, 3.2, 4.0, 5.1])
-
-# 计算SSD
-ssd = np.sum((y_true - y_pred) ** 2)
-print(f"SSD: {ssd}")
-```
-
-# 分类问题的成本函数
-
-## 对数损失（Log Loss）
-
-### 概念
-对数损失（Log Loss）是用于分类问题的常用成本函数。它通过计算预测概率和实际标签之间的对数差异来衡量模型的性能。对数损失越小，表示模型的预测概率越接近实际分类。
-
-### 公式
-对于二分类问题，公式如下：
-$$
-\text{Log Loss} = -\frac{1}{N} \sum_{i=1}^{N} \left[ y_i \log(p_i) + (1 - y_i) \log(1 - p_i) \right]
-$$
-其中：
-- $N$ 是样本数量。
-- $y_i$ 是第 $i$ 个样本的实际标签（0 或 1）。
-- $p_i$ 是模型对第 $i$ 个样本预测为 1 的概率。
-
-### 示例代码
-```python
-from sklearn.metrics import log_loss
-
-# 实际标签和预测概率
-y_true = [0, 0, 1, 1]
-y_pred_proba = [0.1, 0.4, 0.35, 0.8]
-
-# 计算对数损失
-logloss = log_loss(y_true, y_pred_proba)
-print(f"Log Loss: {logloss}")
-```
-
-# 成本函数的比较和选择
-
-## 回归问题
-- **均方误差（MSE）**：适用于数据误差分布较均匀的情况，对较大误差更敏感。
-- **绝对误差和（SAD）**：适用于存在极端值的情况，对所有误差平等对待。
-- **平方差和（SSD）**：与MSE类似，但不需要计算平均值，适用于某些特定应用场景。
-
-## 分类问题
-- **对数损失（Log Loss）**：适用于分类问题，特别是需要考虑预测概率的场景，对错误预测的概率惩罚较高。
-
-# 图示解释
-
-## Log Loss 图示
 ![[content/Images/LogLoss.png]]
 
-## Log Loss 与 MSE 的比较图示
+## Log Loss vs MSE
 ![[content/Images/MSE.png]]
+### Explanation
+- **Range**: \([0, \infty)\). The lower the cross-entropy loss, the better the model's performance.
+- **Usage**: Used in classification tasks.
+- **Models**: 
+  - Logistic Regression
+  - Neural Networks (for classification)
+  - Multiclass classifiers
 
+### Considerations
+- Penalizes wrong classifications more severely.
+- Use when the model outputs probabilities.
 
-# 总结
+### Example
+```python
+# Aemon Wang
+# aemooooon@gmail.com
 
-- **成本函数**：用于衡量模型预测与实际结果的差异，通过最小化成本函数来训练模型。
-- **MSE、SAD、SSD**：用于回归问题的不同成本函数，选择时需考虑数据特性和应用场景。
-- **Log Loss**：用于分类问题，计算预测概率与实际标签之间的对数差异。
+from sklearn.metrics import log_loss
+import numpy as np
+
+# Actual values
+y_true = np.array([1, 0, 0, 1])
+
+# Predicted probabilities
+y_pred = np.array([0.9, 0.1, 0.2, 0.8])
+
+# Calculate Cross-Entropy Loss
+cross_entropy = log_loss(y_true, y_pred)
+print("Cross-Entropy Loss:", cross_entropy)
+```
+
+## 5. Hinge Loss
+
+### Definition
+Hinge Loss is used for training classifiers, primarily for Support Vector Machines (SVMs).
+
+### Formula
+$$
+L = \frac{1}{n} \sum_{i=1}^{n} \max(0, 1 - y_i \hat{y}_i)
+$$
+
+### Explanation
+- **Range**: \([0, \infty)\). The lower the hinge loss, the better the model's performance.
+- **Usage**: Used in binary classification tasks.
+- **Models**: 
+  - Support Vector Machines (SVM)
+
+### Considerations
+- Only considers the misclassified points and the points within the margin.
+- Use when training SVM classifiers.
+
+### Example
+```python
+# Aemon Wang
+# aemooooon@gmail.com
+
+import numpy as np
+
+def hinge_loss(y_true, y_pred):
+    return np.mean(np.maximum(0, 1 - y_true * y_pred))
+
+# Actual values (labels are -1 or 1)
+y_true = np.array([1, -1, 1, -1])
+
+# Predicted values
+y_pred = np.array([0.8, -0.9, 0.7, -0.6])
+
+# Calculate Hinge Loss
+hl = hinge_loss(y_true, y_pred)
+print("Hinge Loss:", hl)
+```
+
+## 6. Kullback-Leibler Divergence (KL Divergence)
+
+### Definition
+KL Divergence measures how one probability distribution diverges from a second, expected probability distribution.
+
+### Formula
+$$
+D_{KL}(P \parallel Q) = \sum_{i} P(i) \log \frac{P(i)}{Q(i)}
+$$
+
+### Explanation
+- **Range**: \([0, \infty)\). The lower the KL divergence, the closer the distributions.
+- **Usage**: Used in probabilistic models and variational autoencoders.
+- **Models**: 
+  - Variational Autoencoders (VAE)
+  - Probabilistic models
+
+### Considerations
+- Not symmetric, meaning \(D_{KL}(P \parallel Q) \neq D_{KL}(Q \parallel P)\).
+- Use when comparing probability distributions.
+
+### Example
+```python
+# Aemon Wang
+# aemooooon@gmail.com
+
+import numpy as np
+from scipy.special import rel_entr
+
+# True distribution
+P = np.array([0.1, 0.4, 0.5])
+
+# Approximated distribution
+Q = np.array([0.2, 0.3, 0.5])
+
+# Calculate KL Divergence
+kl_divergence = np.sum(rel_entr(P, Q))
+print("KL Divergence:", kl_divergence)
+```
+
