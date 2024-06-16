@@ -241,7 +241,7 @@ plt.show()
 
 This code will create a heatmap where the intensity of the color represents the count of predictions, making it easier to analyze the results.
 
-![[confusionmatrix.png]]
+![[content/Images/confusionmatrix.png]]
 
 # Multiple Class Confusion Metrics
 
@@ -290,7 +290,7 @@ $$
 - 深色代表较高的值，表示该类别中的实例较多。
 - 浅色代表较低的值，表示该类别中的实例较少。
 
-![Confusion Matrix Heatmap](multipleconfusionmatrix.jpg)
+![Confusion Matrix Heatmap](content/Images/multipleconfusionmatrix.jpg)
 ## 计算指标
 从混淆矩阵中，我们可以计算各个类别的多种性能指标：
 

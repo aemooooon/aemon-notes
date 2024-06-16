@@ -5,7 +5,7 @@ tags:
   - model
 date: 2024-06-09
 ---
-![[FeatureScaling.png]]
+![[content/Images/FeatureScaling.png]]
 *Using a standardised dataset allowed the model to converge much faster*
 # Normalisation
 

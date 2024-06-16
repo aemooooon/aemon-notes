@@ -186,10 +186,10 @@ print(f"Log Loss: {logloss}")
 # 图示解释
 
 ## Log Loss 图示
-![[LogLoss.png]]
+![[content/Images/LogLoss.png]]
 
 ## Log Loss 与 MSE 的比较图示
-![[MSE.png]]
+![[content/Images/MSE.png]]
 
 
 # 总结

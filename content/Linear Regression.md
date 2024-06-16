@@ -114,7 +114,7 @@ print(f'Slope (beta_1): {beta_1}')
 
 # Residual
 
-![[residual.png]]
+![[content/Images/residual.png]]
 Most commonly, we fit a model by minimising the residual sum of squares. This means that the cost function is calculated like so:
 
 1. Calculate the difference between the actual and predicted values (as previously) for each data point.
