@@ -3,6 +3,8 @@ title: Home
 draft: false
 tags: 
 date: 2024-05-20
+templater: "true"
+template: list-all-notes
 ---
 
 ```typescript
@@ -66,14 +68,6 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
-<%*
-const notes = app.vault.getMarkdownFiles();
-let output = "";
-notes.forEach(note => {
-  output += `- [[${note.basename}]]\n`;
-});
-tR += output;
-%>
 
 
 ![Hua](/static/daughter.jpeg)
