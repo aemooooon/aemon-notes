@@ -3,10 +3,7 @@ title: Home
 draft: false
 tags: 
 date: 2024-05-20
-templater: "true"
-template: list-all-notes
 ---
-
 ```typescript
 /**
  * Daily reflection and persistent efforts lead to success.
@@ -68,6 +65,8 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
-
+{% for note in site.pages %}
+- [{{ note.title }}]({{ note.url }}) 
+{% endfor %}
 
 ![Hua](/static/daughter.jpeg)
