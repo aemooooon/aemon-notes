@@ -65,8 +65,4 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
-{% for note in site.pages %}
-- [{{ note.title }}]({{ note.url }}) 
-{% endfor %}
-
 ![Hua](/static/daughter.jpeg)
