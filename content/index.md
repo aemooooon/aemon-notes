@@ -66,16 +66,14 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
-- [[Linear Regression]]
-- [[Logistic Regression]]
-- [[Continuous Variables]]
-- [[Cumulative Distribution Function]]
-- [[Discrete Variables]]
-- [[Multinomial Logistic Regression]]
-- [[One Hot Vectors Encoding]]
-- [[Probability Density Function]]
-- [[Saving and Loading Model]]
-- [[Related Metrics]]
-- [[Variable Classification]]
+<%*
+const notes = app.vault.getMarkdownFiles();
+let output = "";
+notes.forEach(note => {
+  output += `- [[${note.basename}]]\n`;
+});
+tR += output;
+%>
+
 
 ![Hua](/static/daughter.jpeg)

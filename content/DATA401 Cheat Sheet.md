@@ -16,6 +16,7 @@ date: 2024-06-17
 
 - Experiment: Researchers **actively manipulating/controlling** one or more variables (independent variables) and measure the effect on other variables (dependent variables). Participants are often **randomly assigned** to different conditions or treatments.
 - Observational: Researchers do not manipulate variables. They observe and measure variables as they naturally occur without intervention.
+- (Control Group (treatment) Placebo and Blinding(double-blinded))
   
 - Causation vs. Correlation
 	- **Experiment:** Because variables are controlled and participants are randomly assigned, experiments can establish causation (i.e., changes in the independent variable cause changes in the dependent variable).
@@ -38,18 +39,16 @@ P(A and B) = 0.24.≠ 0 therefore the events are not disjoint
 P(A and B) = 0.24 ~ P(A)*P(B) = 0.6*0.3 = 0.18 ~ P(A and B) ≠ P(A)*P(B), Therefore, the events are not independent
 
 - Linear regression
-	- Locate positive negative  residual
 	- explain appropriate:   Yes, as the observations follow a straight line approximately and there is no ‘fanning’ of residuals (meaning the residuals have approximately constant variance).
-	- estimate   correlation value
 	- describe the direction and strength of the relationship
 		- A correlation of 0.4 indicates a moderately weak positive relationship
-		- more todo.
 	- interpret slop
 		-   When the critic rating of a movie increases by 1 the audience rating is predicted to increase by 0.358
 	- interpret interception
 		- When a critic rates the movie with a zero we predict the audience will rate it at 44.77. This is a meaningful interpretation because a critic rating of 0 and an audience rating of 44.77 are within the range of observable values.
 	- $R^2$
 		- 16.7% of the variability in the Audience Rating is explained by the model.
+	- Correlation(sample(γ)population(ρ)): is a measure of the direction and strength of a linear association between two quantitative variables.
 
 - $H_0$: population mean for x $\mu = 7$
 - $H_1$: population mean for y $\mu \lt7 \ or \gt 7 \ or \neq 7$ 
@@ -87,7 +86,4 @@ Confounding Variable: A third variable that is associated with both the explanat
 A confounding variable can offer a plausible explanation for an association between the explanatory and response variable.
 - If the explanatory variable can be randomly assigned, it is not associated with any confounding variables.
 - Confounding variables are eliminated if the experiment is well designed.
-Randomised Experiment
-Control Group (treatment) Placebo and Blinding(double-blinded)
 
-Correlation(sample(γ)population(ρ)): is a measure of the direction and strength of a linear association between two quantitative variables.
