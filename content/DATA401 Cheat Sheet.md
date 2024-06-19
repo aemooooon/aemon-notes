@@ -34,6 +34,8 @@ date: 2024-06-17
 		$P(E) = P(D) \cdot P(E|D) + P(\overline{D}) \cdot P(E|\overline{D})$ ~ $P(E) = 0.07 \cdot 0.95 + 0.93 \cdot 0.33$
 	- Calculate the probability that a university student chosen at random is a Data Science student given they are enthusiastic about doing a Probability course.
 		$P(D|E) = \frac{P(D \cap E)}{P(E)}$ ~ $P(D|E) = \frac{0.07 \cdot 0.95}{0.07 \cdot 0.95 + 0.93 \cdot 0.33}$
+P(A and B) = 0.24.≠ 0 therefore the events are not disjoint
+P(A and B) = 0.24 ~ P(A)*P(B) = 0.6*0.3 = 0.18 ~ P(A and B) ≠ P(A)*P(B), Therefore, the events are not independent
 
 - Linear regression
 	- Locate positive negative  residual
