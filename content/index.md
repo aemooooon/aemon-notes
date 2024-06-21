@@ -1,11 +1,11 @@
 ---
-title: 
+title: Home
 draft: false
 tags: 
-date: 2024-06-21
+date: 2024-05-20
 ---
 
-```TypeScript
+```javascript
 /**
  * Daily reflection and persistent efforts lead to success.
  * 吾日三省吾身，吾身何患无成？
