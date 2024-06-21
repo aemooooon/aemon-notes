@@ -66,11 +66,6 @@ cron.schedule("0 0 * * *", () => {
 })
 ```
 
-{{< explorer >}}
-
-{{< explorer >}}
-{{ $pages := where .Site.Pages "Section" }}
-{{ range $pages }}
+{{ range .Site.RegularPages }}
 - [{{ .Title }}]({{ .RelPermalink }})
 {{ end }}
-{{< /explorer >}}
