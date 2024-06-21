@@ -65,3 +65,12 @@ cron.schedule("0 0 * * *", () => {
   console.log("Daily routine executed at:", new Date().toLocaleString())
 })
 ```
+
+{{< explorer >}}
+
+{{< explorer >}}
+{{ $pages := where .Site.Pages "Section" "notes" }}
+{{ range $pages }}
+- [{{ .Title }}]({{ .RelPermalink }})
+{{ end }}
+{{< /explorer >}}
