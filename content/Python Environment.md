@@ -245,3 +245,117 @@ For more information can check: https://docs.python.org/3/tutorial/venv.html
     ```
 
 By following these steps, you can ensure that your Python project runs smoothly across different environments and computers.
+
+# 什么是Pipenv
+
+Pipenv 是一种用于Python项目的依赖管理和虚拟环境管理工具。它集成了`pip`和`virtualenv`的功能，简化了项目设置，确保依赖的一致性和安全性。
+
+# 安装Pipenv
+
+首先，你需要在系统中安装Pipenv。你可以使用以下命令来安装它：
+
+```bash
+pip install pipenv
+```
+
+# 初始化项目
+
+在你的项目目录中运行以下命令以初始化Pipfile：
+
+```bash
+pipenv install
+```
+
+这将创建一个`Pipfile`，用于管理项目的依赖。
+
+# 安装依赖
+
+使用Pipenv安装依赖非常简单。以下命令将在你的`Pipfile`中添加`requests`库：
+
+```bash
+pipenv install requests
+```
+
+# 管理开发依赖
+
+如果你需要安装仅在开发过程中使用的依赖，例如测试框架，可以使用`--dev`标志：
+
+```bash
+pipenv install --dev pytest
+```
+
+这将把`pytest`添加到`Pipfile`中的`[dev-packages]`部分。
+
+# 使用虚拟环境
+
+Pipenv会自动创建和管理虚拟环境。你可以使用以下命令激活虚拟环境：
+
+```bash
+pipenv shell
+```
+
+在虚拟环境中，你可以正常运行Python命令和脚本。要退出虚拟环境，只需运行：
+
+```sh
+exit
+```
+
+# 生成和使用锁定文件
+
+Pipenv会自动生成`Pipfile.lock`文件，记录确切的包版本，以确保环境的一致性。要安装`Pipfile.lock`中的依赖，可以使用：
+
+```bash
+pipenv install
+```
+
+# 更新依赖
+
+你可以使用以下命令更新所有依赖到最新版本，并更新`Pipfile.lock`：
+
+```bash
+pipenv update
+```
+
+# 卸载依赖
+
+要卸载某个依赖，你可以使用以下命令：
+
+```bash
+pipenv uninstall <package_name>
+```
+
+# 检查依赖安全
+
+Pipenv可以检查依赖中是否存在已知的安全漏洞。使用以下命令进行检查：
+
+```bash
+pipenv check
+```
+
+# 实际开发示例
+
+假设你有一个名为`my_project`的项目。以下是使用Pipenv管理项目依赖和虚拟环境的示例：
+
+```sh
+# 创建项目目录
+mkdir my_project
+cd my_project
+
+# 初始化Pipenv环境
+pipenv install
+
+# 安装生产依赖
+pipenv install requests
+
+# 安装开发依赖
+pipenv install --dev pytest
+
+# 激活虚拟环境
+pipenv shell
+
+# 在虚拟环境中运行Python脚本
+python script.py
+
+# 退出虚拟环境
+exit
+```
