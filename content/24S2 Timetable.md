@@ -35,8 +35,10 @@ date: 2024-07-11
 |           | 15:00 - 16:00 | 440 Lab A     | Jack Erskine 133 Lab 2                  |
 | **Wednesday** | 09:00 - 11:00 | 420 Lecture B | A4 Lecture Theatre                      |
 |           | 13:00 - 14:00 | 412 Lecture B | Jack Erskine 242                        |
+|           | 14:00 - 16:00 | 473 Lab A     | Jack Erskine 241                        |
 |           | 15:00 - 17:00 | 415 Lecture A | Rehua 530                               |
 | **Thursday**  | 09:00 - 10:00 | 473 Lecture B | Jack Erskine 315                        |
 |           | 15:00 - 17:00 | 440 Lecture A | Rata 222 & 223 Drawing Office           |
 |           | 17:00 - 18:00 | 420 Lab A     | Jack Erskine 035 Lab 2                  |
 | **Friday**    | 09:00 - 11:00 | 412 Lab A    | 211A GIS Comp Lab Ernest Rutherford 211 |
+|           | 10:00 - 11:00 | 420 Lab A     | Jack Erskine 035 Lab 2                  |
