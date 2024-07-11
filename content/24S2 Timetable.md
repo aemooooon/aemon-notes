@@ -41,4 +41,4 @@ date: 2024-07-11
 |           | 15:00 - 17:00 | 440 Lecture A | Rata 222 & 223 Drawing Office           |
 |           | 17:00 - 18:00 | 420 Lab A     | Jack Erskine 035 Lab 2                  |
 | **Friday**    | 09:00 - 11:00 | 412 Lab A    | 211A GIS Comp Lab Ernest Rutherford 211 |
-|           | 10:00 - 11:00 | 420 Lab A     | Jack Erskine 035 Lab 2                  |
+|           | 12:00 - 13:00 | 420 Lab A     | Jack Erskine 035 Lab 2                  |
