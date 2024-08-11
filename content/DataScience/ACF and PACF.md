@@ -5,7 +5,7 @@ tags:
 date: 2024-06-26
 ---
 
-![[acfandpacf.png]]
+![[content/Images/acfandpacf.png]]
 
 #### 自相关函数（ACF）
 

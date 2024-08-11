@@ -37,3 +37,18 @@ git merge main --allow-unrelated-histories
 
 # Make sure you run this from the practical branch.
 ```
+
+```sh
+# Remove .vscode from tracking
+git rm -r --cached .vscode
+
+# update .gitignore file list
+# Stage the changes
+git add .gitignore
+
+# Commit the changes
+git commit -m "Remove .vscode directory from the repository"
+
+# Push the changes
+git push
+```

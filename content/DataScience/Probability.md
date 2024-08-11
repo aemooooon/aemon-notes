@@ -56,7 +56,7 @@ date: 2024-06-18
 - 60% 的 C 类种子会发芽。
 
 ### 树状图
-![[treediagram.png]]
+![[content/Images/treediagram.png]]
 - $P(A) = 0.48$
 - $P(B) = 0.32$
 - $P(C) = 0.20$
