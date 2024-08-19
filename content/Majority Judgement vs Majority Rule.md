@@ -1,7 +1,9 @@
-
 ---
-Hi everyone, my name is Hua
-
+title: 
+draft: false
+tags: 
+date: 2024-08-19
+---
 Before we get started, let's take a moment to think about some of the voting experiences we've had. I remember when I was in primary school, our teachers would have us vote for a class or courses representative, right? That was my first memory on voting. As we grew up. Every time there's a national election, we get to choose our country's leaders. And even now, as  a student, we still cast votes at the end of each semester to evaluate the courses we've taken.
 
 In general, voting is a big part of our lives, playing an important role in decision-making. But here's the thing—do we really understand how the voting rules affect the outcomes? To be honest, I had no idea before taking this course. Things like the domination paradox, different kinds of consistency, and strategic manipulation, these kind of terminologies were absolutely new to me.
@@ -57,6 +59,3 @@ In addition, Majority Judgment provides a fairer and more accurate reflection of
 Okay, in summary, we've talked about ...
 
 Thank you for listening. Don't hesitate to ask if you have any questions.
-
----
-**References list.**
