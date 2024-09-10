@@ -359,3 +359,96 @@ python script.py
 # 退出虚拟环境
 exit
 ```
+
+# 使用 `miniconda` 在 `macos` 下管理`Python`环境
+
+```bash
+# Python 项目开发流程与 Miniconda 环境管理指南
+
+## 1. 使用 Miniconda 创建 Python 虚拟环境
+
+# 创建新虚拟环境
+conda create --name <env_name> python=<python_version>
+# <env_name>: 环境的名称 (如 `spatial_data_env` 或 `deep_learning_env`)
+# <python_version>: 指定的 Python 版本 (如 `3.12` 或 `3.9`)
+
+# 激活虚拟环境
+conda activate <env_name>
+
+# 退出虚拟环境
+conda deactivate
+
+# 列出所有虚拟环境
+conda env list
+
+
+## 2. 使用 VSCode 开发项目并管理虚拟环境
+
+# 在 Finder 中创建一个新文件夹 (如 `~/projects/spatial_analysis_project`)
+# 在 VSCode 中打开该项目文件夹
+# 打开 VSCode 终端 (Ctrl + ~)
+# 激活虚拟环境
+conda activate <env_name>
+
+# 自动选择 Python 环境
+# 打开命令面板 (Cmd + Shift + P)
+# 搜索并选择 `Python: Select Interpreter`
+# 选择相应的 Conda 虚拟环境 (与 `conda env list` 显示名称一致)
+
+# VSCode 会自动将虚拟环境与项目关联
+
+
+## 3. 管理项目中的 Python 包
+
+# 安装 Python 包
+conda install <package_name>
+
+# 使用 pip 安装包
+pip install <package_name>
+
+# 升级某个已安装的包
+conda update <package_name>
+
+# 查看当前虚拟环境中已安装的所有包
+conda list
+
+
+## 4. 使用 `environment.yml` 文件管理依赖
+
+# 导出环境依赖到 `environment.yml`
+conda env export > environment.yml
+
+# 从 `environment.yml` 文件创建环境
+conda env create -f environment.yml
+
+# 更新环境依赖
+conda env update --file environment.yml --prune
+# --prune 参数用于删除不再需要的包
+
+
+## 5. 克隆和删除环境
+
+# 克隆现有环境到新的环境
+conda create --name <new_env_name> --clone <existing_env_name>
+
+# 删除虚拟环境
+conda env remove --name <env_name>
+
+
+## 6. 常见问题解答
+
+# 问题: 如何在 VSCode 中始终使用正确的虚拟环境？
+# 使用 `Python: Select Interpreter` 为每个项目设置默认的 Python 解释器
+# 或者使用 `conda activate <env_name>` 手动激活环境
+
+# 问题: 如何确保 `environment.yml` 文件与实际环境同步？
+# 在每次添加或移除依赖后，运行以下命令更新 `environment.yml` 文件
+conda env export > environment.yml
+
+# 问题: 安装了错误的包，如何恢复？
+# 查看环境的历史修订记录
+conda list --revisions
+
+# 使用以下命令恢复到之前的状态
+conda install --revision <revision_number>
+
